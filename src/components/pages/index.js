@@ -18,7 +18,7 @@ const Home = () => {
         <WelcomeSection/>
         <InfoSection/>
         </>
-    )
+    );
 }
 
 export default Home
