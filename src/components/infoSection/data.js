@@ -42,8 +42,8 @@ export const homeObj3 = {
     description: 'Easily search for specialists in your area or around Germany',
     buttonLabel: 'Get Started',
     imgStart: false,
-    img: require('./../../images/svg-1.svg'),
-    alt: 'Doc1',
+    img: require('./../../images/svg-3.svg'),
+    alt: 'Doc3',
     dark: true,
     primary: true,
     darkText: true
