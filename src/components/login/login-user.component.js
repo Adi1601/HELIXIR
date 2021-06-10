@@ -72,7 +72,7 @@ export default class LoginUser extends Component{constructor() {
 
           <div className="formField">
             <ButtonWrapper>
-                <Button to="signup" >
+                <Button >
                         Login
                     </Button>
             </ButtonWrapper>
