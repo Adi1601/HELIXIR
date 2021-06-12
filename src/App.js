@@ -6,6 +6,7 @@ import Navbar from './components/Navbar/index';
 import React from 'react';
 /*import "bootstrap/dist/css/bootstrap.min.css"*/
 import Tele from './components/pages/tele';
+import SignUpUser from './components/pages/signup';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
       </Switch>
       <Switch>
       <Route path = "/tele" exact component={Tele}/>
+      </Switch>
+      <Switch>
+      <Route path = "/signup" exact component={SignUpUser}/>
       </Switch>
     </Router>
     );
