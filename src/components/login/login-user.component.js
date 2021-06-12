@@ -3,6 +3,7 @@ import Navbar from '../Navbar';
 import { Link } from "react-router-dom";
 import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
 import {Button} from '../ButtonElements';
+import "./login-user.css";
 
 export default class LoginUser extends Component{constructor() {
     //acess and call functions on an object's parent
@@ -38,48 +39,54 @@ export default class LoginUser extends Component{constructor() {
     return (
         <>
         <Navbar/>
-      <div className="formCenter">
-        <form className="formFields" onSubmit={this.handleSubmit}>
-            <div>
-                <label className="formFieldLabel" htmlFor="email">
-                    E-Mail Address
-                    </label>
-                    <input
-                    type="email"
-                    id="email"
-                    className="formFieldInput"
-                    placeholder="Enter your email"
-                    name="email"
-                    value={this.state.email}
-                    onChange={this.handleChange}
-                    />
-            </div>
-            <br/>
-            <div>
-            <label className="formFieldLabel" htmlFor="password">
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              className="formFieldInput"
-              placeholder="Enter your password"
-              name="password"
-              value={this.state.password}
-              onChange={this.handleChange}
-            />
-          </div>
+      <div className="loginPage">
+        <div className="loginAside"/>
+        <div className = "loginForm">
+          <div className="formCenter">
+            <form className="formFields" onSubmit={this.handleSubmit}>
+                <div>
+                    <label className="formFieldLabel" htmlFor="email">
+                        E-Mail Address
+                        </label>
+                        <input
+                        type="email"
+                        id="email"
+                        className="formFieldInput"
+                        placeholder="Enter your email"
+                        name="email"
+                        value={this.state.email}
+                        onChange={this.handleChange}
+                        />
+                </div>
+                <br/>
+                <br/>
+                <div>
+                <label className="formFieldLabel" htmlFor="password">
+                  Password
+                </label>
+                <input
+                  type="password"
+                  id="password"
+                  className="formFieldInput"
+                  placeholder="Enter your password"
+                  name="password"
+                  value={this.state.password}
+                  onChange={this.handleChange}
+                />
+              </div>
 
-          <div className="formField">
-            <ButtonWrapper>
-                <Button >
-                        Login
-                    </Button>
-            </ButtonWrapper>
-          </div>
+              <div className="formField">
+                <ButtonWrapper>
+                    <Button >
+                            Login
+                        </Button>
+                </ButtonWrapper>
+              </div>
 
-        
-        </form>
+            
+            </form>
+          </div>
+        </div>
       </div>
       </>
     );

@@ -21,7 +21,7 @@ const WelcomeSection = () => {
                 <WelcomeP>Sign Up for a new account today and experience the power of HELIXIR.</WelcomeP>
                 <ButtonWrapper>
                     <Button to="signup" onMouseEnter={onHover} onMouseLeave={onHover}>
-                        Get Started {hover ? <ArrowForward/> : <ArrowRight/>}
+                        Become a part of HELIXIR {hover ? <ArrowForward/> : <ArrowRight/>}
                     </Button>
                 </ButtonWrapper>
             </WelcomeContent>
