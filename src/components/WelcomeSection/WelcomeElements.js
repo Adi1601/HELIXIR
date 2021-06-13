@@ -71,7 +71,7 @@ export const WelcomeP = styled.p`
 export const ButtonWrapper =  styled.div`
     margin-top: 32px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
 
 `;

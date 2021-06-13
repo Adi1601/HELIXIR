@@ -1,11 +1,12 @@
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from './components/pages/index';
-import LoginUser from './components/login/login-user.component';
+import LoginUser from './components/pages/login-user.component';
 import Navbar from './components/Navbar/index';
 import React from 'react';
 /*import "bootstrap/dist/css/bootstrap.min.css"*/
 import Tele from './components/pages/tele';
+import TeleEval from './components/pages/tele-eval';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
       </Switch>
       <Switch>
       <Route path = "/tele" exact component={Tele}/>
+      </Switch>
+      <Switch>
+      <Route path = "/tele/form" exact component={TeleEval}/>
       </Switch>
     </Router>
     );
