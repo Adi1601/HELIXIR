@@ -16,7 +16,7 @@ const Navbar = ({toggle}) => {
                         <NavLinks to='/search'>Search Doctors</NavLinks>
                     </NavItem>
                     <NavItem>
-                        <NavLinks to='/tele'>Teleconsultation</NavLinks>
+                        <NavLinks to='/tele/form'>Teleconsultation</NavLinks>
                     </NavItem>
                     <NavItem>
                         <NavLinks to='/offers'>Partner Offers</NavLinks>

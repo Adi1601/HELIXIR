@@ -127,11 +127,11 @@ export default class TeleEvalForm extends Component{
                     </div>
                     <div className="evalFields">
                         <ButtonWrapper>
-                            <Button>
+                            <Button to = "/tele">
                                     Submit
                             </Button>
                             &nbsp;&nbsp;&nbsp;
-                            <Button>
+                            <Button to = "/tele">
                                 Skip
                             </Button>
                         </ButtonWrapper>

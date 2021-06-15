@@ -4,14 +4,16 @@ import { Link } from "react-router-dom";
 import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
 import {Button} from '../ButtonElements';
 import "./login-user.css";
+import "./signup.css";
 
-export default class LoginUser extends Component{constructor() {
+export default class SignUpUser extends Component{constructor() {
     //acess and call functions on an object's parent
     super(); 
 
     this.state = {
+      name:"",
       email: "",
-      password: ""
+      password: "",
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -39,12 +41,26 @@ export default class LoginUser extends Component{constructor() {
     return (
         <>
         <Navbar/>
-      <div className="loginPage">
-            <div className="loginAside"/>
+        <div className="loginPage">
+            <div className="signupAside"/>
             <div className = "loginForm">
               <div className="transbox">
                 <div className="formCenter">
                   <form className="formFields" onSubmit={this.handleSubmit}>
+                      <div>
+                          <label className="formFieldLabel" htmlFor="text">
+                              Name
+                              </label>
+                              <input
+                              type="text"
+                              id="name"
+                              className="formFieldInput"
+                              placeholder="Enter your Name"
+                              name="name"
+                              value={this.state.name}
+                              onChange={this.handleChange}
+                              />
+                      </div>
                       <div>
                           <label className="formFieldLabel" htmlFor="email">
                               E-Mail Address
@@ -76,7 +92,7 @@ export default class LoginUser extends Component{constructor() {
 
                       <ButtonWrapper>
                           <Button >
-                              Login
+                              Sign Up
                           </Button>
                       </ButtonWrapper>
 
@@ -85,10 +101,20 @@ export default class LoginUser extends Component{constructor() {
                 </div>
               </div>
           </div>
-      </div>
+        </div>
       </>
     );
   
-  }
+}
 
+    /*render(){
+    return(
+        <>
+        <Navbar/>
+        <div>
+            <p> You are on the Login page</p>
+        </div>
+        </>
+    );
+    }*/
 }
