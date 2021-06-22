@@ -8,6 +8,7 @@ import React from 'react';
 import Tele from './components/pages/tele';
 import TeleEval from './components/pages/tele-eval';
 import SignUpUser from './components/pages/signup';
+import Review from './components/pages/review';
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
       </Switch>
       <Switch>
       <Route path = "/signup" exact component={SignUpUser}/>
+      </Switch>
+      <Switch>
+      <Route path = "/tele/review" exact component={Review}/>
       </Switch>
     </Router>
     );
