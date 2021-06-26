@@ -5,8 +5,10 @@ import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
 import {Button} from '../ButtonElements';
 import "./login-user.css";
 import "./signup.css";
+import axios from 'axios';
 
-export default class SignUpUser extends Component{constructor() {
+export default class SignUpUser extends Component{
+  constructor() {
     //acess and call functions on an object's parent
     super(); 
 
@@ -28,13 +30,32 @@ export default class SignUpUser extends Component{constructor() {
     this.setState({
       [name]: value
     });
+
   }
 
   handleSubmit(event) {
+    //prevents normal html form behavior
     event.preventDefault();
 
+    const user = {
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password,
+    }
+
     console.log("The form was submitted with the following data:");
-    console.log(this.state);
+    console.log(user);
+
+  
+    axios.post('http://localhost:8000/users/add', user)
+     .then(res => console.log(res.data));
+
+    this.setState({
+      name:'',
+      email:'',
+      password: '',
+    })
+    //window.location = '/';
   }
 
   render() {
@@ -46,7 +67,7 @@ export default class SignUpUser extends Component{constructor() {
             <div className = "loginForm">
               <div className="transbox">
                 <div className="formCenter">
-                  <form className="formFields" onSubmit={this.handleSubmit}>
+                  <form className="formFields" >
                       <div>
                           <label className="formFieldLabel" htmlFor="text">
                               Name
@@ -91,7 +112,7 @@ export default class SignUpUser extends Component{constructor() {
                     </div>
 
                       <ButtonWrapper>
-                          <Button >
+                          <Button onClick= {this.handleSubmit}>
                               Sign Up
                           </Button>
                       </ButtonWrapper>
