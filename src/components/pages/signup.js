@@ -8,55 +8,59 @@ import "./signup.css";
 import axios from 'axios';
 
 export default class SignUpUser extends Component{
-  constructor() {
-    //acess and call functions on an object's parent
-    super(); 
+  constructor(props) {
+    super(props);
+
+    this.onChangeUsername = this.onChangeUsername.bind(this);
+    this.onChangeEmail = this.onChangeEmail.bind(this);
+    this.onChangePassword = this.onChangePassword.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-      name:"",
-      email: "",
-      password: "",
-    };
+      username: '',
+      email: '',
+      password: ''
+    }
+}
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    let target = event.target;
-    let value = target.type === "checkbox" ? target.checked : target.value;
-    let name = target.name;
-
+onChangeUsername(e){
     this.setState({
-      [name]: value
-    });
+        username: e.target.value
+    })
+}
 
-  }
+onChangeEmail(e){
+    this.setState({
+        email: e.target.value
+    })
+}
 
-  handleSubmit(event) {
-    //prevents normal html form behavior
-    event.preventDefault();
+onChangePassword(e){
+    this.setState({
+        password: e.target.value
+    })
+}
+
+onSubmit(e) {
+    e.preventDefault();
 
     const user = {
-      name: this.state.name,
+      username: this.state.username,
       email: this.state.email,
-      password: this.state.password,
+    password: this.state.password,
     }
 
-    console.log("The form was submitted with the following data:");
     console.log(user);
 
-  
-    axios.post('http://localhost:8000/users/add', user)
-     .then(res => console.log(res.data));
+    axios.post('http://localhost:5000/users/add', user)
+      .then(res => console.log(res.data));
 
     this.setState({
-      name:'',
-      email:'',
-      password: '',
+      username: '',
+      email: '',
+      password: ''
     })
-    //window.location = '/';
-  }
+}
 
   render() {
     return (
@@ -67,19 +71,20 @@ export default class SignUpUser extends Component{
             <div className = "loginForm">
               <div className="transbox">
                 <div className="formCenter">
-                  <form className="formFields" >
+                  <form className="formFields" onSubmit={this.onSubmit} >
                       <div>
                           <label className="formFieldLabel" htmlFor="text">
                               Name
                               </label>
                               <input
                               type="text"
-                              id="name"
+                              id="username"
+                              required
                               className="formFieldInput"
                               placeholder="Enter your Name"
-                              name="name"
-                              value={this.state.name}
-                              onChange={this.handleChange}
+                              name="username"
+                              value={this.state.username}
+                              onChange={this.onChangeUsername}
                               />
                       </div>
                       <div>
@@ -89,11 +94,12 @@ export default class SignUpUser extends Component{
                               <input
                               type="email"
                               id="email"
+                              required
                               className="formFieldInput"
                               placeholder="Enter your email"
                               name="email"
                               value={this.state.email}
-                              onChange={this.handleChange}
+                              onChange={this.onChangeEmail}
                               />
                       </div>
                       <div>
@@ -103,17 +109,18 @@ export default class SignUpUser extends Component{
                       <input
                         type="password"
                         id="password"
+                        required
                         className="formFieldInput"
                         placeholder="Enter your password"
                         name="password"
                         value={this.state.password}
-                        onChange={this.handleChange}
+                        onChange={this.onChangePassword}
                       />
                     </div>
-
-                      <ButtonWrapper>
-                          <Button onClick= {this.handleSubmit}>
-                              Sign Up
+                    
+                    <ButtonWrapper>
+                          <Button onClick={this.onSubmit}>
+                              Sign up
                           </Button>
                       </ButtonWrapper>
 

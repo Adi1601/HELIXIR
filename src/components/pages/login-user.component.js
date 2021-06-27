@@ -52,6 +52,7 @@ export default class LoginUser extends Component{constructor() {
                               <input
                               type="email"
                               id="email"
+                              required
                               className="formFieldInput"
                               placeholder="Enter your email"
                               name="email"
@@ -66,6 +67,7 @@ export default class LoginUser extends Component{constructor() {
                       <input
                         type="password"
                         id="password"
+                        required
                         className="formFieldInput"
                         placeholder="Enter your password"
                         name="password"

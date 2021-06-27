@@ -9,6 +9,7 @@ import Tele from './components/pages/tele';
 import TeleEval from './components/pages/tele-eval';
 import SignUpUser from './components/pages/signup';
 import Review from './components/pages/review';
+import Signup2 from './components/pages/signup';
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
       <Route path = "/tele/form" exact component={TeleEval}/>
       </Switch>
       <Switch>
-      <Route path = "/signup" exact component={SignUpUser}/>
+      <Route path = "/signup" exact component={Signup2}/>
       </Switch>
       <Switch>
       <Route path = "/tele/review" exact component={Review}/>
