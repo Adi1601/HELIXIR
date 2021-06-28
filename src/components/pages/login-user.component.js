@@ -14,21 +14,24 @@ export default class LoginUser extends Component{constructor() {
       password: ""
     };
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.onChangeEmail = this.onChangeEmail.bind(this);
+    this.onChangePassword = this.onChangePassword.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
-  handleChange(event) {
-    let target = event.target;
-    let value = target.type === "checkbox" ? target.checked : target.value;
-    let name = target.name;
-
+  onChangeEmail(e){
     this.setState({
-      [name]: value
-    });
+        email: e.target.value
+    })
+}
+
+  onChangePassword(e){
+      this.setState({
+          password: e.target.value
+      })
   }
 
-  handleSubmit(event) {
+  onSubmit(event) {
     event.preventDefault();
 
     console.log("The form was submitted with the following data:");
@@ -57,7 +60,7 @@ export default class LoginUser extends Component{constructor() {
                               placeholder="Enter your email"
                               name="email"
                               value={this.state.email}
-                              onChange={this.handleChange}
+                              onChange={this.onChangeEmail}
                               />
                       </div>
                       <div>
@@ -72,12 +75,12 @@ export default class LoginUser extends Component{constructor() {
                         placeholder="Enter your password"
                         name="password"
                         value={this.state.password}
-                        onChange={this.handleChange}
+                        onChange={this.onChangePassword}
                       />
                     </div>
 
                       <ButtonWrapper>
-                          <Button >
+                          <Button onClick={this.onSubmit}>
                               Login
                           </Button>
                       </ButtonWrapper>
