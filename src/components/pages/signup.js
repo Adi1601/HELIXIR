@@ -8,8 +8,8 @@ import "./signup.css";
 import axios from 'axios';
 
 export default class SignUpUser extends Component{
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangeEmail = this.onChangeEmail.bind(this);
@@ -52,7 +52,7 @@ onSubmit(e) {
 
     console.log(user);
 
-    axios.post('http://localhost:5000/users/add', user)
+    axios.post('http://localhost:3000/users/add', user)
       .then(res => console.log(res.data));
 
     this.setState({
@@ -133,16 +133,6 @@ onSubmit(e) {
       </>
     );
   
-}
+  }
 
-    /*render(){
-    return(
-        <>
-        <Navbar/>
-        <div>
-            <p> You are on the Login page</p>
-        </div>
-        </>
-    );
-    }*/
 }
