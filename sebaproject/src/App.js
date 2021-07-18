@@ -9,6 +9,8 @@ import Tele from './Tele';
 import TeleEval from './components/pages/tele-eval';
 import Review from './components/pages/review';
 import Signup from './components/pages/signup';
+import PatientView from './components/pages/patient-view';
+import SearchDoctor from './components/pages/search';
 
 function App() {
   return (
@@ -16,7 +18,7 @@ function App() {
       <Switch>
           <Route path="/" exact component = {Home}/>
       </Switch>
-      <Switch>    
+      <Switch>
           <Route path="/login" exact component = {LoginUser}/>
       </Switch>
       <Switch>
@@ -30,6 +32,12 @@ function App() {
       </Switch>
       <Switch>
       <Route path = "/tele/review" exact component={Review}/>
+      </Switch>
+      <Switch>
+      <Route path = "/homep" exact component={PatientView}/>
+      </Switch>
+      <Switch>
+        <Route path = "/search" exact component={SearchDoctor}/>
       </Switch>
     </Router>
     );
