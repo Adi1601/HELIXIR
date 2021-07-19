@@ -9,6 +9,7 @@ import Tele from './Tele';
 import TeleEval from './components/pages/tele-eval';
 import Review from './components/pages/review';
 import Signup from './components/pages/signup';
+import Profile from './components/pages/profile';
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
       </Switch>
       <Switch>
       <Route path = "/tele/review" exact component={Review}/>
+      </Switch>
+      <Switch>
+      <Route path = "/profile" exact component={Profile}/>
       </Switch>
     </Router>
     );
