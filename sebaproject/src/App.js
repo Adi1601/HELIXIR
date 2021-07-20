@@ -10,6 +10,8 @@ import TeleEval from './components/pages/tele-eval';
 import Review from './components/pages/review';
 import Signup from './components/pages/signup';
 import Profile from './components/pages/profile';
+import PatientView from './components/pages/patient-view';
+import SearchDoctor from './components/pages/search';
 
 function App() {
   return (
@@ -17,7 +19,7 @@ function App() {
       <Switch>
           <Route path="/" exact component = {Home}/>
       </Switch>
-      <Switch>    
+      <Switch>
           <Route path="/login" exact component = {LoginUser}/>
       </Switch>
       <Switch>
@@ -34,6 +36,12 @@ function App() {
       </Switch>
       <Switch>
       <Route path = "/profile" exact component={Profile}/>
+      </Switch>
+      <Switch>
+      <Route path = "/homep" exact component={PatientView}/>
+      </Switch>
+      <Switch>
+        <Route path = "/search" exact component={SearchDoctor}/>
       </Switch>
     </Router>
     );

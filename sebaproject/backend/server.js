@@ -34,10 +34,10 @@ mongoose.connect(process.env.HELIXIR_URI, {
 //app.use("/api",apis);
 
 const userRouter = require ('./routes/auth');
-app.use('/users', userRouter);              
+app.use('/users', userRouter);
 
-const reviewRoute = require ('./routes/review')
-app.use('/reviews', reviewRoute);
+const doctorRouter = require ('./routes/doctors');
+app.use('/doctors', doctorRouter);
 
 app.listen(port, ()=>{
     console.log(`listening on port ${port}`)
@@ -62,4 +62,3 @@ module.exports =  app
         })
     }
 )*/
-

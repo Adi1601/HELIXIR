@@ -14,19 +14,33 @@
 
 .doctorSide{
     width: 30%;
-    height: 50px;
-    margin: 10px;
-    display: block;
-    background-repeat: repeat;
+    height: 400px;
+    margin: 50px;
+    padding: 2px;
     background-color: #f2f2f2;
     background-size: contain;
+    display: flex;
+    justify-content: center;
+
 }
 
+.image-cropper {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 50%;
+    position: fixed;
+  }
+
 img{  
-    display: block;
+    display: inline-block;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 50%;
+}
+
+.rating{
+    display: block;
 }
 
 .doctorProfileInfo{

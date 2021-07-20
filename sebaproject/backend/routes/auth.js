@@ -1,5 +1,9 @@
 const router = require("express").Router();
+const { Compare } = require("@material-ui/icons");
 let User = require('../models/user.model');
+const jwt = require("jsonwebtoken");
+const JwtSecret = "Very Secret";
+var isPasswordValid = 0;
 
 
 //router.post("/login", authController.login);
@@ -7,7 +11,7 @@ let User = require('../models/user.model');
 
 router.route('/').get((req, res) => {
   User.find()
-    .then(user => res.json(users))
+    .then(users => res.json(users))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
@@ -22,5 +26,32 @@ router.route('/add').post((req, res) => {
     .then(() => res.json('User added!'))
     .catch(err => res.status(400).json('Error: ' + err));
 });
+
+router.route('/login').post( async (req, res) => {
+
+  let user = await User.findOne(
+      {email : req.body.email,
+      });
+  if (!user) return res.status(404).json("user not found");
+  
+  /* replace with bcrypt.compareSync when password is hashed */
+  if (req.body.password === user.password) {
+    isPasswordValid = 1;
+  }
+  if (!isPasswordValid) return res.status(401).send({ token: null });
+
+  const token = jwt.sign(
+    {username: user.username, email: user.email, password: user.password },
+    JwtSecret,
+    {
+      expiresIn: 86400,
+    }
+  );
+
+  return res.status(200).json({
+    token: token,
+    message: "User Logged in Successfully",
+  });
+})
 
 module.exports = router;
