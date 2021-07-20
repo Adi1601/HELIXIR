@@ -3,6 +3,7 @@ import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle} from 'react
 import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
 import {Button} from '../ButtonElements';
 
+
 export default class DoctorEntry extends Component {
     constructor(props) {
         super(props);
@@ -10,9 +11,15 @@ export default class DoctorEntry extends Component {
         this.onBookApp = this.onBookApp.bind(this);
 
     }
+    
 
     onBookApp (e) {
+    
         console.log("Booking Appointment for " + this.props.name);
+        
+       //when the "book appointment" button in clicked, the user is redirected to the appointment page
+        window.location.href='/appointment';
+        window.localStorage["doctor"] = this.props.name;
     }
 
     render() {
