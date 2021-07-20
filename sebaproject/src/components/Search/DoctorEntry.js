@@ -5,9 +5,7 @@ import Profile from '../pages/profile';
 export default class DoctorEntry extends Component {
 
     onClick(e){
-        this.props.history.push("/profile");
         <Profile key={this.props.name}/>
-
     }
 
     render() {
@@ -20,7 +18,7 @@ export default class DoctorEntry extends Component {
             <div className="col-4">
                 <Card>
                     <CardBody>
-                        <a onClick={this.onClick}> <h3>Name: {name}</h3></a>
+                        <a href='/profile' onClick={this.onClick}> <h3>Name: {name}</h3></a>
                         <CardText>City: {city}</CardText>
                         <CardText>Rating: {stars}</CardText>
                     </CardBody>

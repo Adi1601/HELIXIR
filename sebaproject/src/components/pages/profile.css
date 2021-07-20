@@ -3,26 +3,27 @@
     align-items: center;
     justify-content: center;
     padding: 7px; 
-   /*  margin-right: 10%;
+    margin-right: 10%;
     margin-left: 10%;
     margin-top: 40px;
     margin-bottom: 40px;
     background-color: #f2f2f2;
-    border-radius: 80px;*/
+    border-radius: 40px;
     display: flex;
   }
 
 .doctorSide{
     width: 30%;
-    height: 400px;
+    /*height: 400px;
     margin: 50px;
     padding: 2px;
     background-color: #f2f2f2;
-    background-size: contain;
+    background-size: contain;*/
     display: flex;
     justify-content: center;
 
 }
+
 
 .image-cropper {
     width: 150px;
@@ -33,17 +34,17 @@
     position: fixed;
   }
 
-img{  
+/*img{  
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
-}
+}*/
 
 .rating{
     display: block;
 }
 
 .doctorProfileInfo{
-   width: 70%;
+   width: 60%;
    text-align: center;
 }
