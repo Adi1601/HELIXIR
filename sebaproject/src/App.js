@@ -12,9 +12,19 @@ import Signup from './components/pages/signup';
 import PatientView from './components/pages/patient-view';
 import SearchDoctor from './components/pages/search';
 
+import 'bootstrap/dist/css/bootstrap.min.css';//CSS framework for front-end formatting
+
+import Appointment from './components/pages/appointment';//import the appointment component
+import Payment from './components/pages/payment';
+
 function App() {
   return (
     <Router>
+    
+    
+     <Switch>    
+          <Route path="/appointment" exact component = {Appointment}/>
+      </Switch>
       <Switch>
           <Route path="/" exact component = {Home}/>
       </Switch>
@@ -38,6 +48,10 @@ function App() {
       </Switch>
       <Switch>
         <Route path = "/search" exact component={SearchDoctor}/>
+      </Switch>
+
+      <Switch>
+        <Route path = "/payment" exact component={Payment}/>
       </Switch>
     </Router>
     );
