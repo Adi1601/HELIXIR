@@ -11,7 +11,15 @@ import "./profile.css"
 
 
 export default class Profile extends Component{
-  
+  constructor (props) {
+    super (props);
+
+    this.state = {
+      name : '',
+      city : '',
+      rating : ''
+    }
+  }
   
   /*fetchUserDetails=(user_id)=>{
     //console.log(user_id);
@@ -29,7 +37,7 @@ export default class Profile extends Component{
 
   render() {
 
-    const {name, rating, city} = this.props;
+    const {name, city, rating} = this.props.location.state.data;
 
     return (
         <>

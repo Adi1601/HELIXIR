@@ -1,12 +1,28 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 import Profile from '../pages/profile';
 
-export default class DoctorEntry extends Component {
+export default withRouter(class DoctorEntry extends Component {
+
+    constructor (props) {
+        super(props);
+
+        this.onClick = this.onClick.bind(this);
+    }
 
     onClick(e){
-        this.props.history.push("/profile");
-        <Profile key={this.props.name}/>
+
+        e.preventDefault();
+
+        const doctorData = {
+            name: this.props.name,
+            city: this.props.city,
+            rating: this.props.rating,
+        }
+
+        console.log(doctorData);
+        this.props.history.push({pathname: '/profile', state: {data: doctorData}});
 
     }
 
@@ -20,7 +36,7 @@ export default class DoctorEntry extends Component {
             <div className="col-4">
                 <Card>
                     <CardBody>
-                        <a onClick={this.onClick}> <h3>Name: {name}</h3></a>
+                        <div onClick={this.onClick}> <h3>Name: {name}</h3></div>
                         <CardText>City: {city}</CardText>
                         <CardText>Rating: {stars}</CardText>
                     </CardBody>
@@ -28,4 +44,4 @@ export default class DoctorEntry extends Component {
             </div>
         );
     }
-}
+})
