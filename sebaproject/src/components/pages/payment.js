@@ -1,21 +1,42 @@
-import React, { Component } from 'react';
+import React from "react";
+import ReactDOM from "react-dom"
+import Navbar from "../Navbar";
+import "./payments.css";
 
+const PayPalButton = window.paypal.Buttons.driver("react", { React, ReactDOM });
 
-export default class Payment extends Component {
-    constructor(props) {
-        super(props);
+const payments = () =>{
+    const createOrder = (data, actions) =>{
+      return actions.order.create({
+        purchase_units: [
+          {
+            amount: {
+              value: "3"
+            },
+          },
+        ],
+      });
+    };
+  
+    const onApprove = (data, actions) => {
+      return actions.order.capture();
+    };
+  
+    return (
+      <>
+      <Navbar/>
+      <div className="paymentarea">
+      <h2>Pay and Confirm your appointment!</h2>
+      <div className="wrapper">
+      <p>Choose your payment method!</p>
+      <PayPalButton
+        createOrder={(data, actions) => createOrder(data, actions)}
+        onApprove={(data, actions) => onApprove(data, actions)}
+      />
+      </div>
+      </div>
+      </>
+    );
+  }
 
-
-    }
-    
-
-    render() {
-      
-
-        return (
-            <div>
-                Dummy payment
-            </div>
-        );
-    }
-}
+  export default payments;
