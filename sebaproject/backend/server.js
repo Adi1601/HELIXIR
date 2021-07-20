@@ -39,6 +39,9 @@ app.use('/users', userRouter);
 const doctorRouter = require ('./routes/doctors');
 app.use('/doctors', doctorRouter);
 
+const appointmentRouter = require('./routes/appointment');
+app.use('/appointment', appointmentRouter); 
+
 app.listen(port, ()=>{
     console.log(`listening on port ${port}`)
 });
