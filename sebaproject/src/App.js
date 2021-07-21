@@ -15,7 +15,7 @@ import SearchDoctor from './components/pages/search';
 import 'bootstrap/dist/css/bootstrap.min.css';//CSS framework for front-end formatting
 
 import Appointment from './components/pages/appointment';//import the appointment component
-import Payment from './components/pages/payment';
+import payments from './components/pages/payments';
 
 function App() {
   return (
@@ -51,7 +51,7 @@ function App() {
       </Switch>
 
       <Switch>
-        <Route path = "/payment" exact component={Payment}/>
+        <Route path = "/payment" exact component={payments}/>
       </Switch>
     </Router>
     );
