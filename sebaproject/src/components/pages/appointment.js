@@ -38,7 +38,9 @@ import LoginUser from './login-user.component';
 				setUsername(userJ.username); 
 				setEmail(userJ.email);
 				setDoctorName(localStorage.getItem("doctor"));
-				console.log(localStorage.getItem("doctor"));
+				setDoctorId(localStorage.getItem("doctor_id"));
+				//console.log(localStorage.getItem("doctor_id"));
+
 				//setDoctorId()
 			} else {
 				alert("You have to be logged in to make an appointment!");

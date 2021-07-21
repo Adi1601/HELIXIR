@@ -76,9 +76,9 @@ export default class SearchDoctor extends Component{
         console.log("Printing doctors list");
         console.log(doctors);
         const DoctorEntries = doctors.map((doctor, index) => {
-            if (doctor.length) console.log('got something');
-            console.log(doctor['_id'].str);
-            return <DoctorEntry key={doctor.id}{...doctor}/>
+            if (doctors.length) console.log('got something');
+            console.log(doctor._id);
+            return <DoctorEntry key={doctor._id}{...doctor}/>
         });
 
         return(
