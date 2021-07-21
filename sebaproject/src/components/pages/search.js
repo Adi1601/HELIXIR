@@ -4,6 +4,7 @@ import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
 import {Button} from '../ButtonElements';
 import DoctorEntry from '../Search/DoctorEntry';
 import axios from 'axios';
+import {Container} from '@material-ui/core';
 import './search.css';
 
 export default class SearchDoctor extends Component{
@@ -83,49 +84,49 @@ export default class SearchDoctor extends Component{
         return(
             <>
             <Navbar/>
-                
-                <div className="searchBox">
-                    <div >
-                    <form className="formSearch" onSubmit={this.onSubmit}>
-                        <div className="SearchName">
-                            <input placeholder={"Enter Name"}
-                                id="search-name-bar"
-                                value={this.state.searchName}
-                                onChange={this.onSearchName}/>
-                        </div>
-                        <div className="SearchCity">
-                            <input placeholder={"Enter City"}
-                                id="search-city-bar"
-                                value={this.state.searchCity}
-                                onChange={this.onSearchCity}/>
-                        </div>
-                        <div className="SearchSpeciality">
-                            <input placeholder={"Enter Spec"}
-                                id="search-spec-bar"
-                                value={this.state.searchSpec}
-                                onChange={this.onSearchSpec}/>
-                        </div>
-                        <div className="buttonPos">
-                        <ButtonWrapper>
-                            <Button  onClick={this.onSubmit}>Search</Button>
-                        </ButtonWrapper>
-                        </div>
-                        
-                    </form>
+                <Container>
+                    <div className="searchBox">
+                        <form className="formSearch" onSubmit={this.onSubmit}>
+                            <div className="searchInput">
+                                <input placeholder={"Enter Name"}
+                                    id="search-name-bar"
+                                    value={this.state.searchName}
+                                    onChange={this.onSearchName}/>
+                            </div>
+                            <div className="searchInput">
+                                <input placeholder={"Enter City"}
+                                    id="search-city-bar"
+                                    value={this.state.searchCity}
+                                    onChange={this.onSearchCity}/>
+                            </div>
+                            <div className="searchInput">
+                                <input placeholder={"Enter Spec"}
+                                    id="search-spec-bar"
+                                    value={this.state.searchSpec}
+                                    onChange={this.onSearchSpec}/>
+                            </div>
+                            <div className="buttonPos">
+                            <ButtonWrapper>
+                                <Button  onClick={this.onSubmit}>Search</Button>
+                            </ButtonWrapper>
+                            </div>
+                            
+                        </form>
                     </div>
-                </div>
-                <div >
+                </Container>
+                <div className="searchResults">
                     <div className="resultAnnounce">
                     Showing results for: {this.state.searchName}
                     </div>
-                </div>
-                <div className="doctorCards">
-                    <div class="container">
+                    <div className="doctorCards">
                         <div class="row">
                             {DoctorEntries}
                         </div>
                     </div>
                 </div>
+
+
+                
             
             </>
         );

@@ -48,7 +48,7 @@ export default withRouter(class DoctorEntry extends Component {
 
         return (
             <div className="col-2">
-                <Card>
+                <Card classname="resultCard">
                     <CardTitle>
                         <a onClick={this.onClick}> <h3>Dr. {name}</h3></a>
                     </CardTitle>
