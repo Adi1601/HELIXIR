@@ -1,0 +1,31 @@
+.searchBox {
+    float: left;
+    width : 20%;
+    margin-top: 50px;
+    margin-left: 50px;
+    background-color: rgb(80,100,220);
+    background-size: contain;
+    border-radius: 20%;
+    padding: 10px;
+}
+
+.buttonPos {
+    margin-left: 25%;
+}
+
+.formSearch {
+    border: none;
+    margin : 10%;
+}
+
+.resultAnnounce {
+    margin-top : 50px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    font-weight: bold;
+    color: grey;
+}
+
+.doctorCards {
+    margin-left: 10px;
+}

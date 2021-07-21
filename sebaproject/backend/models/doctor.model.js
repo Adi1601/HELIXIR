@@ -17,11 +17,15 @@ const doctor = new schema({
         trim: true,
         //unique: true,
     },
-    rating:{
+    speciality:{
         type: String,
         required: true,
         //unique: true,
         //minlength: 8,
+    },
+    hospital:{
+        type: String,
+        required: false,
     },
 });
 

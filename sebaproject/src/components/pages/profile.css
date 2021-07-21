@@ -25,7 +25,7 @@
 }
 
 .backButton{
-  composes: Button from '../ButtonElements';
+  /*composes: Button from '../ButtonElements';*/
   color: black;
   width: 30px;
   padding: 40px;

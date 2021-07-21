@@ -4,6 +4,7 @@ import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
 import {Button} from '../ButtonElements';
 import DoctorEntry from '../Search/DoctorEntry';
 import axios from 'axios';
+import './search.css';
 
 export default class SearchDoctor extends Component{
     constructor(props) {
@@ -11,64 +12,34 @@ export default class SearchDoctor extends Component{
 
         this.state = {
             doctors: [],
-            searchtext: '',
-            name: '',
-            city: '',
-            rating: ''
+            searchName: '',
+            searchCity: '',
+            searchSpec: '',
         }
         this.onSubmit = this.onSubmit.bind(this);
-        this.onChangeSearch = this.onChangeSearch.bind(this); 
-        this.onChangeName = this.onChangeName.bind(this);
-        this.onChangeCity = this.onChangeCity.bind(this);
-        this.onChangeRating = this.onChangeRating.bind(this);
-        this.onSubmitDoc = this.onSubmitDoc.bind(this);
+        this.onSearchName = this.onSearchName.bind(this); 
+        this.onSearchCity = this.onSearchCity.bind(this);
+        this.onSearchSpec = this.onSearchSpec.bind(this);
+        
     }
 
-    onChangeName(e){
+    
+
+    onSearchName (e) {
         this.setState({
-            name: e.target.value
+            searchName: e.target.value
         })
     }
 
-    onChangeCity(e){
+    onSearchCity (e) {
         this.setState({
-            city: e.target.value
+            searchCity: e.target.value
         })
     }
 
-    onChangeRating(e){
+    onSearchSpec (e) {
         this.setState({
-            rating: e.target.value
-        })
-    }
-
-    onSubmitDoc (e) {
-        e.preventDefault();
-
-        const doctorData = {
-            name: this.state.name,
-            city: this.state.city,
-            rating: this.state.rating,
-          }
-      
-          console.log(doctorData);
-      
-          axios.post('http://localhost:5000/doctors/add', doctorData)
-          .then( (res) => {
-            console.log(res.data);
-          })
-          .catch((error) => {alert(error.message)});
-      
-          this.setState({
-            name: '',
-            city: '',
-            rating: ''
-          })
-    }
-
-    onChangeSearch (e) {
-        this.setState({
-            searchtext: e.target.value
+            searchSpec: e.target.value
         })
     }
 
@@ -76,7 +47,9 @@ export default class SearchDoctor extends Component{
         e.preventDefault();
 
         const search = {
-            text: this.state.searchtext,
+            sname: this.state.searchName,
+            scity: this.state.searchCity,
+            sspec: this.state.searchSpec,
         }
 
         console.log("searching for:", search);
@@ -101,58 +74,59 @@ export default class SearchDoctor extends Component{
 
         console.log("Printing doctors list");
         console.log(doctors);
-
         const DoctorEntries = doctors.map((doctor, index) => {
             if (doctor.length) console.log('got something');
+            console.log(doctor['_id'].str);
             return <DoctorEntry key={doctor.id}{...doctor}/>
         });
 
         return(
             <>
             <Navbar/>
-            <div>
-                <div>
-                    <form onSubmit={this.onSubmitDoc}>
-                        <div>
-                            <label>Name:</label>
-                            <input value={this.state.name} onChange={this.onChangeName}/>
+                
+                <div className="searchBox">
+                    <div >
+                    <form className="formSearch" onSubmit={this.onSubmit}>
+                        <div className="SearchName">
+                            <input placeholder={"Enter Name"}
+                                id="search-name-bar"
+                                value={this.state.searchName}
+                                onChange={this.onSearchName}/>
                         </div>
-                        <div>
-                            <label>City:</label>
-                            <input value={this.state.city} onChange={this.onChangeCity}/>
+                        <div className="SearchCity">
+                            <input placeholder={"Enter City"}
+                                id="search-city-bar"
+                                value={this.state.searchCity}
+                                onChange={this.onSearchCity}/>
                         </div>
-                        <div>
-                            <label>Rating:</label>
-                            <input value={this.state.rating} onChange={this.onChangeRating}/>
+                        <div className="SearchSpeciality">
+                            <input placeholder={"Enter Spec"}
+                                id="search-spec-bar"
+                                value={this.state.searchSpec}
+                                onChange={this.onSearchSpec}/>
                         </div>
+                        <div className="buttonPos">
                         <ButtonWrapper>
-                          <Button onClick={this.onSubmitDoc}>
-                              Add
-                          </Button>
-                      </ButtonWrapper>
-                    </form>
-                </div>
-                <h2>This is doctor search</h2>
-                <div>
-                    <form onSubmit={this.onSubmit}>
-                        
-                            <input id="search-bar" value={this.state.searchtext} onChange={this.onChangeSearch}/>
                             <Button  onClick={this.onSubmit}>Search</Button>
+                        </ButtonWrapper>
+                        </div>
                         
                     </form>
+                    </div>
                 </div>
-                <div>
-                    Showing results for:
-                    <input placeholder={this.state.searchtext} onChange={this.onChangeSearch}/>
+                <div >
+                    <div className="resultAnnounce">
+                    Showing results for: {this.state.searchName}
+                    </div>
                 </div>
-                <div>
+                <div className="doctorCards">
                     <div class="container">
                         <div class="row">
                             {DoctorEntries}
                         </div>
                     </div>
                 </div>
-            </div>
+            
             </>
         );
     }
