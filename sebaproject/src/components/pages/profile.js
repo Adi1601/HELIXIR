@@ -3,16 +3,25 @@ import Navbar from '../Navbar';
 import Rating from '@material-ui/lab/Rating';
 import {Card,Container,CardHeader,CardMedia,CardContent} from '@material-ui/core';
 //import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
-//import {Button} from '../ButtonElements';
-import axios from 'axios';
+import {Button} from '../ButtonElements';
+import image from '../../images/cat.jpeg';
 
 
 import "./review.css"
 import "./profile.css"
+//import { Button } from 'react-scroll';
 
 
 export default class Profile extends Component{
-  
+  constructor (props) {
+    super (props);
+
+    this.state = {
+      name : '',
+      city : '',
+      rating : ''
+    }
+  }
   
   /*fetchUserDetails=(user_id)=>{
     //console.log(user_id);
@@ -30,19 +39,15 @@ export default class Profile extends Component{
 
   render() {
 
-    const {name, rating, city} = this.props;
+    const {name, city, rating} = this.props.location.state.data;
 
     return (
       <>
         <Navbar/>
-
-        <Card>
-          <CardMedia height="140" image="https://rabbit-spa.de/wordpress/wp-content/uploads/2017/07/arzt.jpg"/>
-        </Card>
-
+        <Button to = "search" className= "backButton"> Back </Button>
         <div className="profilePage">
             <Card width="40%">
-              <CardMedia height="140" image="../../images/cat.jpeg"/>
+              <CardMedia height="140" image={image}/>
               <CardContent>
                 <Rating name="read-only" value={rating} readOnly />
                 <p>City: {city}</p>
@@ -54,8 +59,6 @@ export default class Profile extends Component{
               
             </div>
           </div>              
-               
-        
         </>
     );
   

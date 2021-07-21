@@ -24,6 +24,14 @@
 
 }
 
+.backButton{
+  composes: Button from '../ButtonElements';
+  color: black;
+  width: 30px;
+  padding: 40px;
+  margin: 20px;
+  border: 0px solid black;
+}
 
 .image-cropper {
     width: 150px;
