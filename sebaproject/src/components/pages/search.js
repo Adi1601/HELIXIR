@@ -4,6 +4,7 @@ import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
 import {Button} from '../ButtonElements';
 import DoctorEntry from '../Search/DoctorEntry';
 import axios from 'axios';
+import './search.css';
 
 export default class SearchDoctor extends Component{
     constructor(props) {
@@ -82,31 +83,50 @@ export default class SearchDoctor extends Component{
         return(
             <>
             <Navbar/>
-            <div>
                 
-                <h2>This is doctor search</h2>
-                <div>
-                    <form onSubmit={this.onSubmit}>
-                        
-                            <input placeholder={"Enter Name"} id="search-name-bar" value={this.state.searchName} onChange={this.onSearchName}/>
-                            <input placeholder={"Enter City"} id="search-city-bar" value={this.state.searchCity} onChange={this.onSearchCity}/>
-                            <input placeholder={"Enter Spec"} id="search-spec-bar" value={this.state.searchSpec} onChange={this.onSearchSpec}/>
+                <div className="searchBox">
+                    <div >
+                    <form className="formSearch" onSubmit={this.onSubmit}>
+                        <div className="SearchName">
+                            <input placeholder={"Enter Name"}
+                                id="search-name-bar"
+                                value={this.state.searchName}
+                                onChange={this.onSearchName}/>
+                        </div>
+                        <div className="SearchCity">
+                            <input placeholder={"Enter City"}
+                                id="search-city-bar"
+                                value={this.state.searchCity}
+                                onChange={this.onSearchCity}/>
+                        </div>
+                        <div className="SearchSpeciality">
+                            <input placeholder={"Enter Spec"}
+                                id="search-spec-bar"
+                                value={this.state.searchSpec}
+                                onChange={this.onSearchSpec}/>
+                        </div>
+                        <div className="buttonPos">
+                        <ButtonWrapper>
                             <Button  onClick={this.onSubmit}>Search</Button>
+                        </ButtonWrapper>
+                        </div>
                         
                     </form>
+                    </div>
                 </div>
-                <div>
-                    Showing results for:
-                    <input placeholder={this.state.searchName} /*onChange={this.onChnage}*//>
+                <div >
+                    <div className="resultAnnounce">
+                    Showing results for: {this.state.searchName}
+                    </div>
                 </div>
-                <div>
+                <div className="doctorCards">
                     <div class="container">
                         <div class="row">
                             {DoctorEntries}
                         </div>
                     </div>
                 </div>
-            </div>
+            
             </>
         );
     }

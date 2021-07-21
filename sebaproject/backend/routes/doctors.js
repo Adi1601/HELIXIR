@@ -19,9 +19,9 @@ router.route('/search').post(async (req, res) => {
     var searchname = ".*" + myobj_name + ".*";
     var searchcity = ".*" + myobj_city + ".*";
     var searchspec = ".*" + myobj_spec + ".*";
-    let result = await Doctor.find(({name: {$regex : searchname}},
-                                    {city: {$regex : searchcity}},
-                                    {speciality: {$regex : searchspec}}),);
+    let result = await Doctor.find({name: {$regex : searchname},
+                                    city: {$regex : searchcity},
+                                    speciality: {$regex : searchspec}},);
     if (!result) return res.status(404).json("doctor not found");
 
     //console.log("found: " + result);

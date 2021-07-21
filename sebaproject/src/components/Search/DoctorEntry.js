@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle} from 'reactstrap';
 import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
 import {Button} from '../ButtonElements';
+import "./shortprofile.css";
 
 
 export default class DoctorEntry extends Component {
@@ -28,10 +29,10 @@ export default class DoctorEntry extends Component {
         //var stars = "*".repeat(rating);
 
         return (
-            <div className="col-4">
+            <div className="col-2">
                 <Card>
                     <CardBody>
-                        <h3>Name: {name}</h3>
+                        <h5>Name: {name}</h5>
                         <CardText>City: {city}</CardText>
                         <CardText>Speciality: {speciality}</CardText>
                         <CardText>Hospital: {hospital}</CardText>
