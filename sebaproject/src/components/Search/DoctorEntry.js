@@ -37,11 +37,12 @@ export default withRouter(class DoctorEntry extends Component {
        //when the "book appointment" button in clicked, the user is redirected to the appointment page
         window.location.href='/appointment';
         window.localStorage["doctor"] = this.props.name;
-        window.localStorage["doctor_id"] = this.props.key;
+        window.localStorage["doctor_id"] = this.props._id;
+        console.log(this.props._id);
     }
 
     render() {
-        const {name, city, speciality, hospital} = this.props;
+        const {name, city, speciality, hospital, _id} = this.props;
 
         //var stars = "*".repeat(rating);
 
@@ -56,6 +57,7 @@ export default withRouter(class DoctorEntry extends Component {
                         <CardText>City: {city}</CardText>
                         <CardText>Speciality: {speciality}</CardText>
                         <CardText>Hospital: {hospital}</CardText>
+                        <CardText>ID: {_id}</CardText>
                         <ButtonWrapper>
                           <Button onClick={this.onBookApp}>
                               Book Appointment
