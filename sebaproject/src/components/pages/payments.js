@@ -27,6 +27,7 @@ const payments = () =>{
       <Navbar/>
       <div className="paymentarea">
       <h2>Pay and Confirm your appointment!</h2>
+      <h3>Convience Fee: 3€</h3>
       <div className="wrapper">
       <p>Choose your payment method!</p>
       <PayPalButton
