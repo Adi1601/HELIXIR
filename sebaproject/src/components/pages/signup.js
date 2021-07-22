@@ -121,7 +121,10 @@ onSubmit(e) {
                         onChange={this.onChangePassword}
                       />
                     </div>
-                    
+                    <br/>
+                    <p className="noAccount">
+                      Already have an account? Login <a href="/signup">here</a>
+                    </p>
                     <ButtonWrapper>
                           <Button onClick={this.onSubmit}>
                               Sign up

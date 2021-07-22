@@ -24,6 +24,8 @@ export default withRouter(class DoctorEntry extends Component {
             name: this.props.name,
             city: this.props.city,
             rating: this.props.rating,
+            speciality:this.props.speciality,
+            _id: this.props._id,
         }
 
         console.log(doctorData);
@@ -49,23 +51,25 @@ export default withRouter(class DoctorEntry extends Component {
 
 
         return (
+            <>
             <div className="col-2">
                 <Card>
-                    <CardTitle>
-                        <a onClick={this.onClick}> <h3>Dr. {name}</h3></a>
-                    </CardTitle>
-                    <CardBody>
-                        <CardText>City: {city}</CardText>
-                        <CardText>Speciality: {speciality}</CardText>
-                        <CardText>Hospital: {hospital}</CardText>
-                        <ButtonWrapper>
-                          <Button onClick={this.onBookApp}>
-                              Book Appointment
-                          </Button>
-                        </ButtonWrapper>
-                    </CardBody>
+                        <CardTitle>
+                            <a onClick={this.onClick}> <h3><b>Dr. {name}</b></h3></a>
+                        </CardTitle>
+                        <CardBody>
+                            <CardText> <b>City:</b> {city}</CardText>
+                            <CardText><b>Speciality:</b> {speciality}</CardText>
+                            <CardText><b>Hospital: </b>{hospital}</CardText>
+                            <br/> 
+                            <button onClick={this.onBookApp} className="appointmentButton">
+                            Book Appointment
+                        </button>
+                        </CardBody>
                 </Card>
+
             </div>
+        </>
         );
     }
 })

@@ -130,7 +130,10 @@ export default class LoginUser extends Component{
                         onChange={this.onChangePassword}
                       />
                     </div>
-
+                    <br/>
+                    <p className="noAccount">
+                      Don't have an account? Register <a href="/login">here</a>
+                    </p>
                       <ButtonWrapper>
                           <Button onClick={this.onSubmit}>
                               Login

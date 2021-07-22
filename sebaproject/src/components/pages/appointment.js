@@ -90,11 +90,11 @@ import LoginUser from './login-user.component';
 						 	<Navbar />  
 
 							<form id="form_appointment">
-								<a id="text">	Choose an available date for your appointment with doctor<b> {doctor_name} </b></a><br/><br/>	
+								<a id="text">	Choose an available date for your appointment with <b> Dr. {doctor_name} </b></a><br/><br/>	
 										
 								<DatePicker  selected={date} onChange={(appointment_date) => setDate(appointment_date)} /> <br/><br/>
 								
-								<a id="text">	Choose an available time for your appointment with doctor <b> {doctor_name} </b></a> <br/><br/>
+								<a id="text">	Choose an available time for your appointment with <b> Dr. {doctor_name} </b></a> <br/><br/>
 								
 								<input type="radio" name="appointment_time" onChange={() => setTime(9)} />
 								<label id="hours_appointment">09 : 00 - 10 : 00</label><br/>
@@ -123,9 +123,12 @@ import LoginUser from './login-user.component';
 								<label id="text">Motive for appointment( optional)</label><br/>
 								
 								<input type="text" id="textbox" placeholder="Motive" value={motive} onChange={(e) => setMotive(e.target.value)}/><br/><br/>
-										
-								<Button  variant="primary" type="submit" onClick={(e) => onSubmit(e)} > Proceed </Button>
-								<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+								<br/>
+
+
+								<Button  id="buttonProceed" variant="primary" type="submit" onClick={(e) => onSubmit(e)} > Proceed </Button>
+								<a href="/search" id="backButton"> Back</a>
+								<br/>
 									
 							</form>
 							

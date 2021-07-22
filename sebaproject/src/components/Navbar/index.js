@@ -18,12 +18,12 @@ const Navbar = ({toggle}) => {
                     <NavItem>
                         <NavLinks to='/tele/form'>Teleconsultation</NavLinks>
                     </NavItem>
-                    <NavItem>
+                    {/* <NavItem>
                         <NavLinks to='/offers'>Partner Offers</NavLinks>
                     </NavItem>
                     <NavItem>
                         <NavLinks to='/signup'>Sign Up</NavLinks>
-                    </NavItem>
+                    </NavItem> */}
                 </NavMenu>
                 <NavBtn>
                     <NavBtnLink to='/login'>Login</NavBtnLink>

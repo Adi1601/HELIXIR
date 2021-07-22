@@ -27,7 +27,7 @@ export const NavbarContainer = styled.div`
     z-index: 1;
     width: 100%;
     padding: 0 24px;
-    max-width: 1100px;
+    max-width: 1400px;
 `;
 
 export const NavLogo = styled(LinkR)`
@@ -53,7 +53,9 @@ export const NavLinks = styled(LinkR)`
     cursor: pointer;
 
     &:active{
-        border-bottom: 3px solid #01bf71;
+        font-weight: bolder;
+        background-color:#D6DBE;
+        border-bottom: 3px solid #D6DBE;
     }
 `;
 
@@ -78,6 +80,7 @@ export const NavMenu = styled.ul`
     list-style: none;
     text-allign: center;
     margin-right: -22px;
+    margin-top: 10px;
 
     @media screen and (max-width: 768px) {
         display: none;
@@ -112,7 +115,7 @@ export const NavBtnLink = styled(LinkR)`
 
     &:hover{
         transistion: all 0.2s ease-in-out;
-        background: #1ffff8;
+        background: #E6AF2E;
         color: #010606;
     }
 `;
