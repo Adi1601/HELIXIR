@@ -32,10 +32,10 @@ export default class Profile extends Component{
 
   componentDidMount() {
 
-    console.log("fetching details for " + this.props.location.state.data.id);
+    console.log("fetching details for " + this.props.location.state.data._id);
 
     const data = {
-      doctor_id : this.props.location.state.data.id,
+      doctor_id : this.props.location.state.data._id,
     }
     console.log(data.doctor_id);
 

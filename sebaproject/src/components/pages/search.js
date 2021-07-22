@@ -24,7 +24,28 @@ export default class SearchDoctor extends Component{
         
     }
 
-    
+    componentDidMount () {
+        const search = {
+            sname: this.state.searchName,
+            scity: this.state.searchCity,
+            sspec: this.state.searchSpec,
+        }
+
+        console.log("searching for first load:", search);
+        
+        axios.post('http://localhost:5000/doctors/search', search)
+        .then( (res) => {
+            const docs = res.data.doctor;
+            for(let i=0; i<docs.length; i++) {
+                console.log("doctors rec: " + docs[i].name);
+            }
+            this.setState({ doctors: docs})
+            console.log(this.state.doctors);
+        })
+        .catch(function(err) {
+            console.log("Rec Err: " + err.response);
+        });
+    }
 
     onSearchName (e) {
         this.setState({
