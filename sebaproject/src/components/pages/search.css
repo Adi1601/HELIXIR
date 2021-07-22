@@ -5,8 +5,10 @@
     background-color:#D6DBE6;
     background-size: contain;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
     box-shadow: 5px 10px 10px #eeeeee;
+    padding-left: 10%;
+    padding-right: 10%;
 
 }
 
@@ -26,8 +28,9 @@
 .resultAnnounce {
     margin-top : 50px;
     margin-bottom: 20px;
-    margin-left: 50px;
+    margin-left: 10%;
     font-weight: bold;
+    font-size: medium;
     color: grey;
 }
 
@@ -43,6 +46,11 @@
 }
 
 .doctorCards {
-    margin-left: 50px;
-    width: 100%;
+    margin: 50px;
+    margin-top: 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 }

@@ -85,7 +85,7 @@ export default class SearchDoctor extends Component{
             <>
             <Navbar/>
             <div className="searchBox">
-                <h3>Filters</h3>
+                <h3><b>Filters</b></h3>
                 <br/>
                 <form className="formSearch" onSubmit={this.onSubmit}>
                     
@@ -122,9 +122,7 @@ export default class SearchDoctor extends Component{
                 Results: {this.state.searchName}
                 </div>
                 <div className="doctorCards">
-                    <div class="row">
-                        {DoctorEntries}
-                    </div>
+                    {DoctorEntries}
                 </div>
             </div>
 

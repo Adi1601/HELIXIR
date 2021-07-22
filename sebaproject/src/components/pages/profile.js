@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import Navbar from '../Navbar';
 import Rating from '@material-ui/lab/Rating';
+import { useHistory } from "react-router-dom";
 //import {Card,Container,CardHeader,CardMedia,CardContent} from '@material-ui/core';
-//import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle} from 'reactstrap';
 import {Button} from '../ButtonElements';
 import image from '../../images/cat.jpeg';
 import axios from 'axios';
+import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
 
 
 import "./review.css"
@@ -72,7 +73,7 @@ export default class Profile extends Component{
   render() {
 
 
-    const {name, city, rating, id} = this.props.location.state.data;
+    const {name, city, rating, speciality,id} = this.props.location.state.data;
 
     const longreviews = this.state.comments;
     const Comments = longreviews.map((review, index) => {
@@ -84,14 +85,16 @@ export default class Profile extends Component{
       <>
         <Navbar/>
         <Button to = "search" className= "backButton"> Back </Button>
-      
             
-        <div className="profilePage">        
-            <Card className="cardProfile">
-              <CardTitle tag="h5">I'm Dr. {name}</CardTitle>
-              <CardText>
+        <div className="profilePage">
+            <Card className="text-center">
+              <CardTitle tag="h3">I'm Dr. {name}</CardTitle>
+              <hr/>
+              <CardText className="text-center">
                 <Rating name="read-only" value={this.state.avgrat} readOnly />
+                <br/><br/>
                 <p>City: {city}</p>
+                <p>Speciality: {speciality}</p>
               </CardText>
             </Card>
             <div>
