@@ -77,7 +77,7 @@ const ContextProvider = ({ children }) => {
 
     connectionRef.current.destroy();
 
-    window.location.reload();
+    window.location.href="/tele/review";
   };
 
   return (
