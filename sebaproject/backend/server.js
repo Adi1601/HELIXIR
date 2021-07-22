@@ -40,7 +40,10 @@ const doctorRouter = require ('./routes/doctors');
 app.use('/doctors', doctorRouter);
 
 const appointmentRouter = require('./routes/appointment');
-app.use('/appointment', appointmentRouter); 
+app.use('/appointment', appointmentRouter);
+
+const reviewRouter = require('./routes/review');
+app.use('/review', reviewRouter);
 
 app.listen(port, ()=>{
     console.log(`listening on port ${port}`)

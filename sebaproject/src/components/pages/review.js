@@ -24,7 +24,8 @@ export default class Review extends Component{
     this.state = {
       rating: "",
       comment: "",
-      id_doc: 4445, //this.props.id,
+      id_doc: window.localStorage["doctor_id"],
+      doc: window.localStorage["doctor"]
 
     };
 
@@ -56,8 +57,9 @@ export default class Review extends Component{
       id_doc: this.state.id_doc,
     }
 
-    axios.post('http://localhost:5000/review', review)
-      .then(res => console.log(res.data));
+    axios.post('http://localhost:5000/review/add', review)
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err));
 
 
     this.setState({
@@ -75,7 +77,7 @@ export default class Review extends Component{
         <Navbar/>
         
         <div className= "evalCenter">
-            <h2>How was your experience?</h2>
+            <h2>How was your experience with Dr. {this.state.doc}?</h2>
 
                 <form onSubmit={this.onSubmit}>
                     
@@ -89,7 +91,7 @@ export default class Review extends Component{
                         />
                         <div>
                           <label className= "text" htmlFor="comment">
-                              Comment 
+                              Comment
                           </label>
                           <br/> <br/>
 

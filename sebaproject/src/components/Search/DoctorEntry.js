@@ -24,6 +24,7 @@ export default withRouter(class DoctorEntry extends Component {
             name: this.props.name,
             city: this.props.city,
             rating: this.props.rating,
+            id: this.props._id
         }
 
         console.log(doctorData);

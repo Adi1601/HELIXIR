@@ -17,7 +17,7 @@ const review = new schema({
         trim: true,
     },
     id_doc:{
-        type: Number,
+        type: String,
         required: true,
         unique: true,
     },

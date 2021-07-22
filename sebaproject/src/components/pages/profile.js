@@ -6,6 +6,7 @@ import Rating from '@material-ui/lab/Rating';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle} from 'reactstrap';
 import {Button} from '../ButtonElements';
 import image from '../../images/cat.jpeg';
+import axios from 'axios';
 
 
 import "./review.css"
@@ -20,8 +21,38 @@ export default class Profile extends Component{
     this.state = {
       name : '',
       city : '',
-      rating : ''
+      rating : '',
+      doc_id : '',
+      avgrat : '',
+      comments : [],
+      once : true
     }
+  }
+
+  componentDidMount() {
+
+    console.log("fetching details for " + this.props.location.state.data.id);
+
+    const data = {
+      doctor_id : this.props.location.state.data.id,
+    }
+    console.log(data.doctor_id);
+
+    axios.post('http://localhost:5000/review/loadprofile', data)
+        .then( (res) => {
+            this.setState({comments : res.data.review});
+            this.setState({avgrat : res.data.rating});
+            //for(let i=0; i<docs.length; i++) {
+            //    console.log("doctors rec: " + docs[i].name);
+            //}
+            //this.setState({ doctors: docs})
+            console.log(this.state.avgrat);
+            console.log(res.data.message);
+        })
+        .catch(function(err) {
+            console.log("Rec Err: " + err.response);
+    });
+
   }
   
   /*fetchUserDetails=(user_id)=>{
@@ -40,7 +71,14 @@ export default class Profile extends Component{
 
   render() {
 
-    const {name, city, rating} = this.props.location.state.data;
+
+    const {name, city, rating, id} = this.props.location.state.data;
+
+    const longreviews = this.state.comments;
+    const Comments = longreviews.map((review, index) => {
+      console.log(review.comment);
+      return <div>{review.comment}{review.rating}</div>;
+    });
 
     return (
       <>
@@ -48,14 +86,17 @@ export default class Profile extends Component{
         <Button to = "search" className= "backButton"> Back </Button>
       
             
-        <div className="profilePage">
+        <div className="profilePage">        
             <Card className="cardProfile">
               <CardTitle tag="h5">I'm Dr. {name}</CardTitle>
               <CardText>
-                <Rating name="read-only" value={rating} readOnly />
+                <Rating name="read-only" value={this.state.avgrat} readOnly />
                 <p>City: {city}</p>
               </CardText>
             </Card>
+            <div>
+              {Comments}
+            </div>
             
 
           </div>              
