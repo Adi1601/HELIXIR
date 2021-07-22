@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import Navbar from '../Navbar';
 import Rating from '@material-ui/lab/Rating';
-import {Card,Container,CardHeader,CardMedia,CardContent} from '@material-ui/core';
+//import {Card,Container,CardHeader,CardMedia,CardContent} from '@material-ui/core';
 //import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
+import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle} from 'reactstrap';
 import {Button} from '../ButtonElements';
 import image from '../../images/cat.jpeg';
 
@@ -45,19 +46,18 @@ export default class Profile extends Component{
       <>
         <Navbar/>
         <Button to = "search" className= "backButton"> Back </Button>
+      
+            
         <div className="profilePage">
-            <Card width="40%">
-              <CardMedia height="140" image={image}/>
-              <CardContent>
+            <Card className="cardProfile">
+              <CardTitle tag="h5">I'm Dr. {name}</CardTitle>
+              <CardText>
                 <Rating name="read-only" value={rating} readOnly />
                 <p>City: {city}</p>
-              </CardContent>
+              </CardText>
             </Card>
             
-            <div className="doctorProfileInfo">
-              <h2>I'm Dr. {name} </h2>
-              
-            </div>
+
           </div>              
         </>
     );

@@ -84,50 +84,50 @@ export default class SearchDoctor extends Component{
         return(
             <>
             <Navbar/>
-                <Container>
-                    <div className="searchBox">
-                        <form className="formSearch" onSubmit={this.onSubmit}>
-                            <div className="searchInput">
-                                <input placeholder={"Enter Name"}
-                                    id="search-name-bar"
-                                    value={this.state.searchName}
-                                    onChange={this.onSearchName}/>
-                            </div>
-                            <div className="searchInput">
-                                <input placeholder={"Enter City"}
-                                    id="search-city-bar"
-                                    value={this.state.searchCity}
-                                    onChange={this.onSearchCity}/>
-                            </div>
-                            <div className="searchInput">
-                                <input placeholder={"Enter Spec"}
-                                    id="search-spec-bar"
-                                    value={this.state.searchSpec}
-                                    onChange={this.onSearchSpec}/>
-                            </div>
-                            <div className="buttonPos">
-                            <ButtonWrapper>
-                                <Button  onClick={this.onSubmit}>Search</Button>
-                            </ButtonWrapper>
-                            </div>
-                            
-                        </form>
+            <div className="searchBox">
+                <h3>Filters</h3>
+                <br/>
+                <form className="formSearch" onSubmit={this.onSubmit}>
+                    
+                    <div className="searchInput">
+                        <input
+                            id="search-name-bar"
+                            placeholder="Doctor's name"
+                            value={this.state.searchName}
+                            onChange={this.onSearchName}/>
                     </div>
-                </Container>
-                <div className="searchResults">
-                    <div className="resultAnnounce">
-                    Showing results for: {this.state.searchName}
+                    <div className="searchInput">
+                        <input
+                            id="search-city-bar"
+                            placeholder="City"
+                            value={this.state.searchCity}
+                            onChange={this.onSearchCity}/>
                     </div>
-                    <div className="doctorCards">
-                        <div class="row">
-                            {DoctorEntries}
-                        </div>
+                    <div className="searchInput">
+                        <input
+                            id="search-spec-bar"
+                            placeholder="Speciality"
+                            value={this.state.searchSpec}
+                            onChange={this.onSearchSpec}/>
+                    </div>
+                    <div className="buttonPos">
+                        <ButtonWrapper>
+                            <Button  onClick={this.onSubmit}>Search</Button>
+                        </ButtonWrapper>
+                    </div>
+                </form>
+            </div>
+            <div className="searchResults">
+                <div className="resultAnnounce">
+                Results: {this.state.searchName}
+                </div>
+                <div className="doctorCards">
+                    <div class="row">
+                        {DoctorEntries}
                     </div>
                 </div>
+            </div>
 
-
-                
-            
             </>
         );
     }

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle} from 'reactstrap';
 import Profile from '../pages/profile';
 import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
+import {Button} from '../ButtonElements';
 import "./shortprofile.css";
 
 
@@ -49,7 +50,7 @@ export default withRouter(class DoctorEntry extends Component {
 
         return (
             <div className="col-2">
-                <Card classname="resultCard">
+                <Card>
                     <CardTitle>
                         <a onClick={this.onClick}> <h3>Dr. {name}</h3></a>
                     </CardTitle>
@@ -57,7 +58,6 @@ export default withRouter(class DoctorEntry extends Component {
                         <CardText>City: {city}</CardText>
                         <CardText>Speciality: {speciality}</CardText>
                         <CardText>Hospital: {hospital}</CardText>
-                        <CardText>ID: {_id}</CardText>
                         <ButtonWrapper>
                           <Button onClick={this.onBookApp}>
                               Book Appointment

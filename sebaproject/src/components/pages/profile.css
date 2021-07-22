@@ -1,15 +1,14 @@
 
 .profilePage{
     align-items: center;
-    justify-content: center;
+    justify-content: center ;
     padding: 7px; 
     margin-right: 10%;
     margin-left: 10%;
     margin-top: 40px;
     margin-bottom: 40px;
-    background-color: #f2f2f2;
+    background-color: white;
     border-radius: 40px;
-    display: flex;
   }
 
 .doctorSide{
@@ -26,11 +25,11 @@
 
 .backButton{
   /*composes: Button from '../ButtonElements';*/
-  color: black;
+  color: grey !important;
   width: 30px;
   padding: 40px;
   margin: 20px;
-  border: 0px solid black;
+  border: 0px !important;
 }
 
 .image-cropper {
@@ -50,6 +49,11 @@
 
 .rating{
     display: block;
+}
+
+.cardProfile  {      
+  width: 60%;
+  background-color: #f2f2f2 !important;
 }
 
 .doctorProfileInfo{

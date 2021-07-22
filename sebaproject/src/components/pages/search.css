@@ -1,17 +1,15 @@
 .searchBox {
-    width: 30%;
+    width: 100%;
+    height: auto;
     margin-top: 50px;
-    margin-left: 40px;
     background-color:#D6DBE6;
     background-size: contain;
-    border-radius: 20%;
     align-items: center;
     padding: 10px;
+    box-shadow: 5px 10px 10px #eeeeee;
+
 }
 
-.container{
-    display:flex;
-}
 
 .buttonPos {
     margin-left: 25%;
@@ -19,7 +17,10 @@
 
 .formSearch {
     border: none;
-    margin : 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    
 }
 
 .resultAnnounce {
@@ -32,12 +33,16 @@
 
 .searchInput{
     padding:10px;
+    margin-left: 50px;
+    border-radius: 10%;
+
 }
 
 .searchResults{
-    width:70%;
+    width:100%;
 }
 
 .doctorCards {
-    margin-left: 40px;
+    margin-left: 50px;
+    width: 100%;
 }
