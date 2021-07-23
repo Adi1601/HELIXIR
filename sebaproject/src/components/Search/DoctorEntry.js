@@ -55,14 +55,14 @@ export default withRouter(class DoctorEntry extends Component {
             <div className="col-2">
                 <Card>
                         <CardTitle>
-                            <a onClick={this.onClick}> <h3><b>Dr. {name}</b></h3></a>
+                            <p className="cardTitle"><b>Dr. {name}</b> <a onClick={this.onClick}> [more info] </a> </p>
                         </CardTitle>
                         <CardBody>
                             <CardText> <b>City:</b> {city}</CardText>
                             <CardText><b>Speciality:</b> {speciality}</CardText>
                             <CardText><b>Hospital: </b>{hospital}</CardText>
                             <br/> 
-                            <button onClick={this.onBookApp} className="appointmentButton">
+                        <button onClick={this.onBookApp} className="appointmentButton">
                             Book Appointment
                         </button>
                         </CardBody>

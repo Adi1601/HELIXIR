@@ -27,6 +27,11 @@ const doctor = new schema({
         type: String,
         required: false,
     },
+
+    avg_rating:{
+        type:Number,
+        required:false,
+    },
 });
 
 const Doctor = mongoose.model('Doctor', doctor);

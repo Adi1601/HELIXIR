@@ -27,17 +27,25 @@
 }
 
 .appointmentButton{
-    background-color: white;
-    color: black;
+    background-color: #1D3D75;
+    color: white    ;
     font-weight: bold;
     border-radius: 10px;
-    border-color: #1D3D75;
-
+    opacity:100%;
+    padding: 10px;
     text-align: right;
     	
 }
 
 .appointmentButton:hover{
     background-color: #1D3D75;
+    opacity: 70%;
+    padding: 9px;
     color: white;
+}
+
+.cardTitle > a{
+    font-size: small;
+    font-weight: 200;
+    color: grey;
 }

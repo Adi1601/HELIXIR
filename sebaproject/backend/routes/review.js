@@ -15,8 +15,8 @@ router.route('/add').post((req, res) => {
   const rating = req.body.rating;
   const comment = req.body.comment;
   const id_doc = req.body.id_doc;
-  //console.log("post received: %s %s", username, password);
   const newReview = new Review({rating, comment, id_doc});
+
 
   newReview.save()
     .then(() => res.json('Review added!'))

@@ -49,13 +49,13 @@ input[type="radio"]{
 	float: right;
 	font-size: large;
 	background-color: #1D3D75;
-	opacity: 70%;
+	opacity: 100%;
 	border-color: white;
 	border-radius: 10px;
 }
 
 #buttonProceed:hover{
-	opacity: 100%;
+	opacity: 70%;
 	background-color: #1D3D75;
 	font-weight: bold;
 }
