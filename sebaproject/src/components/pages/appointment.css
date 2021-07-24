@@ -16,11 +16,12 @@
 	border-radius: 6px;
 	border-color: #021a3b;
 	background-color: #f2f2f2;
+	border: 0px;
 	margin: 20px;
 	margin-left: auto;
 	margin-right: auto;
 	width: 50%;
-	padding: 30px;
+	padding: 4%;
 	
 }
 
@@ -55,13 +56,15 @@ input[type="radio"]{
 }
 
 #buttonProceed:hover{
-	opacity: 70%;
-	background-color: #1D3D75;
-	font-weight: bold;
+	background-color: #152d56;
 }
 
 #backButton{
 	color: #797979;
+	width: 30px;
+	border: 0px;
+	font-size: medium;
+	background-color: transparent;
 }
 
 #backButton:hover{

@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
 import Navbar from '../Navbar';
-import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
-import {Button} from '../ButtonElements';
+/*import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
+import {Button} from '../ButtonElements';*/
 import Rating from '@material-ui/lab/Rating';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import axios from 'axios';
+import Button from 'react-bootstrap/Button';
+
+import "./appointment.css";
 
 
 import "./tele-eval.css";
@@ -83,33 +86,33 @@ export default class Review extends Component{
                 <form onSubmit={this.onSubmit}>
                     
                     <div className="evalFields">
-                      <div className="doctorPhoto"/>
+                      {/* <div className="doctorPhoto"/> */}
                       <div className="rating">
                         <Rating
                           name="simple-controlled"
                           value={this.rating}
                           onChange={this.onChangeRating}
+                          id="starRating"
+
                         />
                         <div>
                           <label className= "text" htmlFor="comment">
                               Comment
                           </label>
-                          <br/> <br/>
-
-                          <input
-                              type="comment"
-                              id="comment"
-                              className="reviewInput"
-                              placeholder=""
-                              value={this.comment}
-                              onChange={this.onChangeComment}
-                          />
+                          <br/>
+                          <textarea rows="5" cols="60" name="text" placeholder="Enter text" value={this.comment}
+                              onChange={this.onChangeComment}></textarea>
+              
                         </div>
                       </div>
                     </div>
 
                     <div className="evalFields">
-                        <ButtonWrapper>
+                          <a href="/" id="backButton"> Skip</a>
+                          &nbsp;&nbsp;&nbsp;
+                          <Button  id="buttonProceed" variant="primary" type="submit" onClick={this.onSubmit} > Submit </Button>
+									        
+                        {/* <ButtonWrapper>
                             <Button onClick={this.onSubmit}>
                                     Submit
                             </Button>
@@ -117,7 +120,7 @@ export default class Review extends Component{
                             <Button to = "/">
                                 Skip
                             </Button>
-                        </ButtonWrapper>
+                        </ButtonWrapper> */}
                     </div>
                 </form>
             </div>

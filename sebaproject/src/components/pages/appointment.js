@@ -1,11 +1,12 @@
 import React, { Component, useState, useEffect} from 'react';
-import Navbar from '../Navbar';
+import Navbar, { navbarLocation } from '../Navbar';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
-import "./appointment.css";
 import LoginUser from './login-user.component';
+
+import "./appointment.css";
 
 
  //Appointment component defined here and rendered when accesing the following from the browser: http://localhost:5001/appointment
@@ -90,14 +91,16 @@ import LoginUser from './login-user.component';
     			isLogged == false? <LoginUser/>:
     			
     				<div> 
-						 	<Navbar />  
+						 	<Navbar/>  
 
 							<form id="form_appointment">
-								<a id="text">	Choose an available date for your appointment with <b> Dr. {doctor_name} </b></a><br/><br/>	
+								<h3>Appointment with  <b> Dr. {doctor_name} </b></h3>
+								<br/>
+								<p id="text">	Choose an available <b>date </b>for your appointment</p>	
 										
-								<DatePicker  selected={date} onChange={(appointment_date) => setDate(appointment_date)} /> <br/><br/>
+								<DatePicker  selected={date} onChange={(appointment_date) => setDate(appointment_date)} /> <br/><br/><br/>
 								
-								<a id="text">	Choose an available time for your appointment with <b> Dr. {doctor_name} </b></a> <br/><br/>
+								<p id="text">	Choose an available <b>time </b>for your appointment </p> 
 								
 								<input type="radio" name="appointment_time" onChange={() => setTime(9)} />
 								<label id="hours_appointment">09 : 00 - 10 : 00</label><br/>
@@ -121,17 +124,17 @@ import LoginUser from './login-user.component';
 								<label id="hours_appointment">15 : 00 - 16 : 00</label><br/>
 								
 								<input type="radio" name="appointment_time" onChange={() => setTime(16)}/>
-								<label id="hours_appointment">16 : 00 - 17 : 00</label><br/><br/>
+								<label id="hours_appointment">16 : 00 - 17 : 00</label><br/><br/> <br/>
 								
-								<label id="text">Motive for appointment( optional)</label><br/>
+								<label id="text">Motive for appointment (optional)</label><br/>
 								
 								<input type="text" id="textbox" placeholder="Motive" value={motive} onChange={(e) => setMotive(e.target.value)}/><br/><br/>
 								<br/>
 
-
-								<Button  id="buttonProceed" variant="primary" type="submit" onClick={(e) => onSubmit(e)} > Proceed to payment </Button>
-								<a href="/search" id="backButton"> Back</a>
-								<br/>
+								<div >
+									<Button  id="buttonProceed" variant="primary" type="submit" onClick={(e) => onSubmit(e)} > Proceed to payment </Button>
+									<a href="/search" id="backButton"> Back</a>
+								</div>
 									
 							</form>
 							

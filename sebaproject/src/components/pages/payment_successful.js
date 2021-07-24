@@ -17,6 +17,8 @@ export default class PaymentSuccessful extends Component{
 
 
         return(
+            <>
+            <Navbar/>
             <div  id="all" class="container h-100" >
 				
 				<div className="image-container">
@@ -28,6 +30,7 @@ export default class PaymentSuccessful extends Component{
            		
          
             </div>
+            </>
         );
     }
 }

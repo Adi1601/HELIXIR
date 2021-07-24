@@ -1,0 +1,32 @@
+
+#reviewComment{
+    text-align: left;
+    font-size: 15px;
+    font-weight: normal;
+    color: black;
+}
+
+#reviewCard{
+    border-radius: 0px;
+    padding-left: 20px ;
+    margin: 20px;
+    margin-bottom: 30px;
+    /*box-shadow: 0px 0px 3px #ccc;*/
+    color: black;
+    width: 100%;
+    justify-content: center;
+    border-left: 5px solid #D6DBE6;
+}
+
+#quoteIconL{
+   padding-bottom: 15px;
+   padding-right: 15px;
+   color: #D6DBE6;
+
+}
+
+#quoteIconR{
+    padding-top: 15px;
+    padding-left: 15px;
+    color: #D6DBE6;
+ }

@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 import { Redirect } from 'react-router-dom';
-import Navbar from '../Navbar';
+import Navbar, { navbarLocation } from '../Navbar';
 import axios from 'axios';
 import Card from 'react-bootstrap/Card';
+
+import logo from '../../images/user.png'
+import { AiOutlineMail } from 'react-icons/ai'
 
 import "./patientview.css";
 
 let token = window.localStorage["jwtToken"];
-
 
 
 export default class PatientView extends Component{
@@ -30,9 +32,10 @@ export default class PatientView extends Component{
 				let base64Url = token.split(".")[1];
     			let base64 = base64Url.replace("-", "+").replace("_", "/");
     			//atob() function decodes a string of data which has been encoded using Base64 encoding.
-				let userJ = JSON.parse(window.atob(base64));	
+				let userJ = JSON.parse(window.atob(base64));
+				console.log(userJ);
 
-				this.setState({username : userJ.username});     
+				this.setState({username : userJ.username},this.findRoutes );     
 				this.setState({email : userJ.email});
 				
 				//I've tryed to put ${this.state.username}, but setState() is asynchronous, so I can't control when it actually updates the username, so the axios gets nothing as req.params because username is empty
@@ -42,7 +45,8 @@ export default class PatientView extends Component{
 					},
 				})
 				  .then(res => {
-					this.setState({ user_appointments: res.data})
+					this.setState({ user_appointments: res.data});
+					//console.log(res.data);
 				  })
 				  .catch((err) => {
 					console.log(err);
@@ -57,9 +61,11 @@ export default class PatientView extends Component{
   		return(
 	    this.state.user_appointments.map(function(item) {
 	    	return (
-	    	<div id="patient_view_card" ><Card border="primary" className="text-left">
+	    	<div id="patient_view_card" >
+				
+				<Card id="appointmentCard">
 				    <Card.Body>
-						<Card.Title> For doctor {item.doctor_name} </Card.Title>
+						<Card.Title> Dr. {item.doctor_name} </Card.Title>
 						 <Card.Text>
 						 	  Doctor's speciality: {item.doctor_speciality}<br/>
 						 	  Motive: {item.motive}<br/>
@@ -70,7 +76,10 @@ export default class PatientView extends Component{
 				     
 				    </Card.Body>
 
-			</Card><br/></div>)
+			</Card>
+			
+			</div>
+			)
 	    })
 	    )
     }
@@ -83,15 +92,19 @@ export default class PatientView extends Component{
 
         return(
             <>
-            <Navbar/>
-            <div class="container h-100" >
-            	<br/><br/>
-		        <h2 id="username_header"> {this.state.username} </h2><br/><hr size="6"  />
-		       	<a id="patient_email"> Email:  {this.state.email} </a><br/><br/>
-		       	<a id="yourapp">Appointments:</a><br/><br/>
+            <Navbar myLocation={navbarLocation.profile}/>
+            <div id="profilePage" >
+				<div id="userInfo">
+					<img src={logo} id="profilePic"/>
+					<h2 id="username_header"> {this.state.username} </h2>
+					<hr size="3"/>
+					<p id="patient_email"> < AiOutlineMail/> {this.state.email} </p>
+				</div>
+				<div>
+		       		<a id="yourapp">Scheduled Appointments:</a><br/><br/>
 		           
-		           <div id="user_appointments">	{ this.renderItems()} </div><br/>
-		           
+		           <div id="user_appointments">	{ this.renderItems()} </div>
+			</div> 
                
             </div>
             </>

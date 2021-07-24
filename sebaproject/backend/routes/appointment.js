@@ -16,9 +16,13 @@ router.route('/').get(authorizeToken, (req,res)=> {
 
 //get localhost:5000/appointment/:username
 router.route('/:username').get(authorizeToken, (req,res)=> {
-	Appointment.find({name: req.params.username})
-    	.then(user_appointments => res.json(user_appointments))
-    	.catch(err => res.status(400).json('Error: ' + err));  	
+	let result = Appointment.find({name: req.body.username})
+    	.then(
+			user_appointments => res.json(user_appointments))
+		.catch(err => res.status(400).json('Error: ' + err)); 
+		console.log(res.json(user_appointments));
+
+		
 });
 
 //post localhost:5000/appointment/appointmentCreate

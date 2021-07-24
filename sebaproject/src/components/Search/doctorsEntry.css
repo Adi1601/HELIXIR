@@ -4,16 +4,20 @@
 }
 
 #doctorCard{
-    background-color: #eeeeee !important;
     border-radius: 20px;
     padding:30px ;
     margin: 10px;
-    box-shadow: 5px 10px 8px #888888;
+    box-shadow: 0px 0px 3px #ccc;
     color: black;
     width: 100%;
     display:grid;
     grid-template-columns: 15% 85%;
     justify-content: center;
+}
+
+#doctorCard:hover{
+    border: 0px solid grey;
+    background-color: #b1bbd0;
 }
 
 #doctorCardBody{
@@ -53,8 +57,14 @@
     font-size: small;
     font-weight: 200;
     color: grey;
+    cursor: pointer;
 }
 
 .cardInfo{
     border-radius: 10px;
+}
+
+#ratingSearch{
+    margin-left: -1px !important;
+
 }

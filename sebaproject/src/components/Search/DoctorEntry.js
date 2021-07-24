@@ -7,7 +7,8 @@ import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
 import {Button} from '../ButtonElements';
 import "./doctorsEntry.css";
 import { requirePropFactory } from '@material-ui/core';
-import logo from '../../images/helixir.png'
+import logo from '../../images/user.png'
+
 
 export default withRouter(class DoctorEntry extends Component {
 
@@ -27,6 +28,7 @@ export default withRouter(class DoctorEntry extends Component {
             city: this.props.city,
             rating: this.props.rating,
             speciality:this.props.speciality,
+            hospital: this.props.hospital,
             _id: this.props._id,
         }
 
@@ -49,8 +51,6 @@ export default withRouter(class DoctorEntry extends Component {
     render() {
         const {name, city, speciality, hospital, avg_rating, _id} = this.props;
 
-        //var stars = "*".repeat(rating);
-
 
         return (
             <>
@@ -60,9 +60,11 @@ export default withRouter(class DoctorEntry extends Component {
                     <div className="cardInfo">
 
                         <CardTitle>
-                                <h4 id="doctorCardTitle"><b>Dr. {name}  </b> 
-                                <a onClick={this.onClick}> [more info] </a> </h4>
-                                <Rating name="read-only" value={avg_rating} readOnly />
+                                <h4 id="doctorCardTitle">
+                                    <b>Dr. {name}  </b> 
+                                    <a onClick={this.onClick}> [more info] </a>
+                                 </h4>
+                                <Rating name="read-only" value={avg_rating}  id="ratingSearch" readOnly />
                         </CardTitle>
                         <CardBody id="doctorCardBody">
                                 <CardText id="doctorCardText"> <b>City:</b> {city}</CardText>

@@ -2,8 +2,9 @@ import React from 'react'
 import {Nav, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLinks, NavBtn, NavBtnLink} from './NavbarElements';
 import {FaBars} from 'react-icons/fa';
 import axios from 'axios';
+import { navbarLocation } from '.';
 
-const Navbar2 = ({toggle}) => {
+const Navbar2 = ({toggle, myLocation}) => {
 
     const onClick = (e) => {
         e.preventDefault();
@@ -12,12 +13,13 @@ const Navbar2 = ({toggle}) => {
         localStorage.removeItem('jwToken');
         localStorage.clear();
         axios.post('http://localhost:5000/users/logout')
-      .then( (res) => {
-        window.location.href='/';
-      })
-      .catch((error) => {alert(error.message)});
+        .then( (res) => {
+            window.location.href='/';
+        })
+        .catch((error) => {alert(error.message)});
       
     }
+   
 
     return (
         <>
@@ -30,10 +32,10 @@ const Navbar2 = ({toggle}) => {
                 </MobileIcon>
                 <NavMenu>
                     <NavItem>
-                        <NavLinks to='/search'>Search Doctors</NavLinks>
+                        <NavLinks to='/search' highlighted = {myLocation === navbarLocation.search}> Search Doctors</NavLinks>
                     </NavItem>
                     <NavItem>
-                        <NavLinks to='/tele/form'>Teleconsultation</NavLinks>
+                        <NavLinks to='/homep'highlighted = {myLocation === navbarLocation.profile} >Appointments</NavLinks>
                     </NavItem>
                     <NavItem>
                         <NavLinks onClick={(e) => onClick(e)}>Logout</NavLinks>

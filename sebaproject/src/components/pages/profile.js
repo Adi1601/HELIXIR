@@ -2,17 +2,15 @@ import React, {Component} from 'react';
 import Navbar from '../Navbar';
 import Rating from '@material-ui/lab/Rating';
 import { useHistory } from "react-router-dom";
-//import {Card,Container,CardHeader,CardMedia,CardContent} from '@material-ui/core';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle} from 'reactstrap';
-import {Button} from '../ButtonElements';
 import axios from 'axios';
-import logo from '../../images/helixir.png'
-import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
-
+import Feedback from './feedback'
+import { IoIosArrowDropleftCircle} from 'react-icons/io'
+import { AiFillMedicineBox} from 'react-icons/ai'
+import { FaHospital,FaCity} from 'react-icons/fa'
 
 import "./review.css"
 import "./profile.css"
-//import { Button } from 'react-scroll';
 
 
 export default class Profile extends Component{
@@ -58,37 +56,37 @@ export default class Profile extends Component{
   render() {
 
 
-    const {name, city, rating, speciality,id} = this.props.location.state.data;
+    const {name, city, rating, speciality, hospital, id} = this.props.location.state.data;
 
     const longreviews = this.state.comments;
     const Comments = longreviews.map((review, index) => {
       console.log(review.comment);
-      return <div>{review.comment}{review.rating}</div>;
+      return <Feedback review={review}/>
     });
 
     return (
       <>
         <Navbar/>
-        <Button to = "search" id="backButton"> Back </Button>
-            
-        <div className="profilePage">
-            <Card className="text-center">
-              <CardImg top width="100%" src={logo}/>
-              <CardBody>
-                <CardTitle tag="h3">I'm Dr. {name}</CardTitle>
-                <hr/>
-                <CardText className="text-center">
-                  <Rating name="read-only" value={this.state.avgrat} readOnly />
-                  <br/><br/>
-                  <p>City: {city}</p>
-                  <p>Speciality: {speciality}</p>
-                </CardText>
-              </CardBody>
-            </Card>
-            <div>
-              {Comments}
-            </div>
-        </div>              
+        <div id="docProfilePage">
+          <a href="search" id="backToSearch"> <IoIosArrowDropleftCircle/> Back </a>
+          <div className="profilePageContent">
+              <Card id="docCard">
+              <CardTitle tag="h3"> <b>I'm Dr. {name}</b></CardTitle>
+                <CardBody>
+                  <CardText className="text-center">
+                    <Rating name="read-only" value={this.state.avgrat} readOnly />
+                    <br/><br/>
+                    <p><FaCity id="iconsProfile" /> <b>City: </b>{city}</p>
+                    <p> <AiFillMedicineBox id="iconsProfile"/> <b>Speciality:</b> {speciality}</p>
+                    <p> <FaHospital id="iconsProfile"/> <b>Hospital: </b>{hospital}</p>
+                  </CardText>
+                </CardBody>
+              </Card>
+              <div id="commentSection">
+                {Comments}
+              </div>
+          </div> 
+        </div>             
       </>
     );
   

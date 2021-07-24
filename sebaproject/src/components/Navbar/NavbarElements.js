@@ -65,6 +65,13 @@ export const NavLinks = styled(LinkR)`
         background-color:#152d56;
         border-radius: 10px;
     }
+
+    ${props => props.highlighted && `
+        background-color:#193566;
+        border-radius: 10px;
+    `
+    }
+
     &:active{
         font-weight: bolder;
         background-color:#152d56;

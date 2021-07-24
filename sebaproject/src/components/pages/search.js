@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Navbar from '../Navbar';
+import Navbar, { navbarLocation } from '../Navbar';
 import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
 import {Button} from '../ButtonElements';
 import DoctorEntry from '../Search/DoctorEntry';
@@ -104,10 +104,10 @@ export default class SearchDoctor extends Component{
 
         return(
             <>
-            <Navbar/>
+            <Navbar myLocation={navbarLocation.search}/>
             <div className="searchPage">
                 <div className="searchBox">
-                    <h3><b>Filters</b></h3>
+                    <h3 ><b>Filters</b></h3>
                     <br/>
                     <form className="formSearch" onSubmit={this.onSubmit}>
                         
@@ -144,9 +144,6 @@ export default class SearchDoctor extends Component{
                     </form>
                 </div>
                 <div className="searchResults">
-                    {/* <div className="resultAnnounce">
-                    Results: {this.state.searchName}
-                    </div> */}
                     <div className="doctorCards">
                         {DoctorEntries}
                     </div>

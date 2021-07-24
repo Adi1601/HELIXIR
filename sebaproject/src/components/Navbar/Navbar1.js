@@ -1,8 +1,10 @@
 import React from 'react'
 import {Nav, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLinks, NavBtn, NavBtnLink} from './NavbarElements';
 import {FaBars} from 'react-icons/fa';
+import { navbarLocation } from '.';
 
-const Navbar1 = ({toggle}) => {
+const Navbar1 = ({toggle, myLocation}) => {
+
     return (
         <>
         <Nav>
@@ -14,12 +16,12 @@ const Navbar1 = ({toggle}) => {
                 </MobileIcon>
                 <NavMenu>
                     <NavItem>
-                        <NavLinks to='/search'>Search Doctors</NavLinks>
+                        <NavLinks to='/search' highlighted = {myLocation === navbarLocation.search} >Search Doctors</NavLinks>
                     </NavItem>
-                    <NavItem>
+                     {/*<NavItem>
                         <NavLinks to='/tele/form'>Teleconsultation</NavLinks>
                     </NavItem>
-                    {/* <NavItem>
+                     <NavItem>
                         <NavLinks to='/offers'>Partner Offers</NavLinks>
                     </NavItem>
                     <NavItem>
