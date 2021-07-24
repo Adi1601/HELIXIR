@@ -182,8 +182,6 @@ export default class SearchDoctor extends Component{
                     </form>
                 </div>
                 <div className="searchResults">
-<<<<<<< HEAD
-=======
                     {/* <div className="resultAnnounce">
                     Results: {this.state.searchName}
                     </div> */}
@@ -191,7 +189,6 @@ export default class SearchDoctor extends Component{
                         <option value="alphabet">Doctor Name A-Z</option>
                         <option value="rating">Rating High-Low</option>
                     </select>
->>>>>>> 7f163ef20dd44658df101065474074af7e5377a3
                     <div className="doctorCards">
                         {DoctorEntries}
                     </div>
