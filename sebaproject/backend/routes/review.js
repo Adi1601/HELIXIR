@@ -1,5 +1,6 @@
 const router = require("express").Router();
 let Review = require('../models/review.model');
+let Doctor = require('../models/doctor.model');
 
 
 //router.post("/login", authController.login);
@@ -11,10 +12,22 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/add').post((req, res) => {
-  const rating = req.body.rating;
+router.route('/add').post(async (req, res) => {
+  const rating = parseInt(req.body.rating);
   const comment = req.body.comment;
   const id_doc = req.body.id_doc;
+  
+  let doctor = await Doctor.findById({_id : id_doc});
+  var avg_rat = doctor.avg_rating;
+  var num_rat = doctor.num_ratings;
+
+  avg_rat = (((avg_rat * num_rat) + rating) / (num_rat + 1));
+
+  doctor = await Doctor.findByIdAndUpdate({_id : id_doc},
+     {avg_rating : avg_rat});
+  doctor = await Doctor.findByIdAndUpdate({_id : id_doc},
+     {$inc : {'num_ratings' : 1}});
+
   const newReview = new Review({rating, comment, id_doc});
 
 
