@@ -14,6 +14,10 @@ import Profile from './components/pages/profile';
 import PatientView from './components/pages/patient-view';
 import SearchDoctor from './components/pages/search';
 import Success from './components/pages/payment_successful';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7f163ef20dd44658df101065474074af7e5377a3
 import 'bootstrap/dist/css/bootstrap.min.css';//CSS framework for front-end formatting
 
 import Appointment from './components/pages/appointment';//import the appointment component
@@ -59,6 +63,9 @@ function App() {
       </Switch>
       <Switch>
         <Route path = "/payment" exact component={payments}/>
+      </Switch>
+      <Switch>    
+        <Route path="/success" exact component = {Success}/>
       </Switch>
     </Router>
     );

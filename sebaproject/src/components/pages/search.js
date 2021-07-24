@@ -16,11 +16,14 @@ export default class SearchDoctor extends Component{
             searchName: '',
             searchCity: '',
             searchSpec: '',
+            sortEnable: false,
+            sortType: '',
         }
         this.onSubmit = this.onSubmit.bind(this);
         this.onSearchName = this.onSearchName.bind(this); 
         this.onSearchCity = this.onSearchCity.bind(this);
         this.onSearchSpec = this.onSearchSpec.bind(this);
+        this.setSortType = this.setSortType.bind(this);
         
     }
 
@@ -45,6 +48,41 @@ export default class SearchDoctor extends Component{
         .catch(function(err) {
             console.log("Rec Err: " + err.response);
         });
+    }
+
+    componentDidUpdate () {
+        console.log("sort Enable ");
+        console.log(this.state.sortEnable);
+        if (this.state.sortEnable) {
+            console.log("updating");
+            console.log(this.state.sortType);
+            this.setState({sortEnable : false});
+            this.sortDoctors(this.state.sortType);
+            console.log("Kartikay printing doctors");
+            console.log(this.state.doctors);
+        }
+    }
+
+    sortDoctors (type) {
+        const types = {
+            alphabet : 'name',
+            rating : 'avg_rating',
+        };
+        var sortProperty = types[type];
+        if (sortProperty === 'avg_rating') {
+            var sorted = [...this.state.doctors].sort((a, b) => b[sortProperty] - a[sortProperty]);
+        } else {
+            var sorted = [...this.state.doctors].sort((a, b) => a[sortProperty].localeCompare(b[sortProperty]));
+        }
+        this.setState({doctors : sorted});
+        sorted = [];
+    }
+
+    setSortType (e) {
+        this.setState({
+            sortType : e.target.value,
+            sortEnable : true
+        })
     }
 
     onSearchName (e) {
@@ -144,6 +182,16 @@ export default class SearchDoctor extends Component{
                     </form>
                 </div>
                 <div className="searchResults">
+<<<<<<< HEAD
+=======
+                    {/* <div className="resultAnnounce">
+                    Results: {this.state.searchName}
+                    </div> */}
+                    <select onChange={this.setSortType}>
+                        <option value="alphabet">Doctor Name A-Z</option>
+                        <option value="rating">Rating High-Low</option>
+                    </select>
+>>>>>>> 7f163ef20dd44658df101065474074af7e5377a3
                     <div className="doctorCards">
                         {DoctorEntries}
                     </div>

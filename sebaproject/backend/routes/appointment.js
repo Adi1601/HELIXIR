@@ -34,6 +34,7 @@ router.route('/appointmentCreate').post(authorizeToken, (req,res) => {
 		doctor_name: req.body.doctor_name,
 		doctor_speciality: req.body.doctor_speciality,
 		doctor_id: req.body.doctor_id,
+		date: req.body.date,
 		start_time: req.body.start_time,
 		motive: req.body.motive
     });

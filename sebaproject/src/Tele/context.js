@@ -20,7 +20,11 @@ const ContextProvider = ({ children }) => {
   const connectionRef = useRef();
 
   useEffect(() => {
+<<<<<<< HEAD
     if(window.location.pathname === '/tele')
+=======
+   if(window.location.pathname === '/tele')
+>>>>>>> 7f163ef20dd44658df101065474074af7e5377a3
     {
     navigator.mediaDevices.getUserMedia({ video: true, audio: true })
       .then((currentStream) => {
