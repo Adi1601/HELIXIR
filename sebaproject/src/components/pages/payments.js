@@ -19,7 +19,9 @@ const payments = () =>{
     };
   
     const onApprove = (data, actions) => {
-      return actions.order.capture();
+      return (actions.order.capture(),
+      window.location.href='/success'
+      );
     };
   
     return (
