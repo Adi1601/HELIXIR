@@ -4,7 +4,7 @@ import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle} from 'react
 import Profile from '../pages/profile';
 import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
 import {Button} from '../ButtonElements';
-import "./shortprofile.css";
+import "./doctorsEntry.css";
 
 
 export default withRouter(class DoctorEntry extends Component {
@@ -55,7 +55,9 @@ export default withRouter(class DoctorEntry extends Component {
             <div className="col-2">
                 <Card>
                         <CardTitle>
-                            <p className="cardTitle"><b>Dr. {name}</b> <a onClick={this.onClick}> [more info] </a> </p>
+                            <div className="wrapper">
+                                <p className="cardTitle"><b>Dr. {name}</b> <a onClick={this.onClick}> [more info] </a> </p>
+                            </div>
                         </CardTitle>
                         <CardBody>
                             <CardText> <b>City:</b> {city}</CardText>

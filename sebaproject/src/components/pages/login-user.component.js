@@ -132,7 +132,7 @@ export default class LoginUser extends Component{
                     </div>
                     <br/>
                     <p className="noAccount">
-                      Don't have an account? Register <a href="/login">here</a>
+                      Don't have an account? Register <a href="/signup">here</a>
                     </p>
                       <ButtonWrapper>
                           <Button onClick={this.onSubmit}>

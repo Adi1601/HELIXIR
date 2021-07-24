@@ -7,6 +7,7 @@ const Navbar1 = ({toggle}) => {
         <>
         <Nav>
             <NavbarContainer>
+                <img src='../../images/helixir.png'/>
                 <NavLogo to="/">HELIXIR</NavLogo>
                 <MobileIcon onClick={toggle}>
                     <FaBars/>

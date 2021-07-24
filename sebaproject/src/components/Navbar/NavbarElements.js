@@ -40,6 +40,14 @@ export const NavLogo = styled(LinkR)`
     margin-left: 24px;
     font-weight: bold;
     text-decoration: none;
+    
+    &:hover{
+        color:#fff;
+    }
+    
+    &:active{
+        font-weight: 400;
+    }
     `;
     
 export const NavLinks = styled(LinkR)`
@@ -52,10 +60,15 @@ export const NavLinks = styled(LinkR)`
     height: 100%;
     cursor: pointer;
 
+    &:hover{
+        color:#fff;
+        background-color:#152d56;
+        border-radius: 10px;
+    }
     &:active{
         font-weight: bolder;
-        background-color:#D6DBE;
-        border-bottom: 3px solid #D6DBE;
+        background-color:#152d56;
+        border-bottom: 3px solid #010606;
     }
 `;
 

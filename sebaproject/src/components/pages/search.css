@@ -1,27 +1,56 @@
-.searchBox {
-    width: 100%;
-    height: auto;
-    margin-top: 50px;
-    background-color:#D6DBE6;
-    background-size: contain;
-    align-items: center;
-    padding: 20px;
-    box-shadow: 5px 10px 10px #eeeeee;
-    padding-left: 10%;
-    padding-right: 10%;
-
+.searchPage{
+    display: grid;
+    font-family: Arial, Helvetica, sans-serif;
+    grid-template-columns: 20% 80%;
 }
 
 
-.buttonPos {
-    margin-left: 25%;
+.searchBox {
+    width: 100%;
+    height: auto;
+    margin: 20px;
+    margin-right: 0;
+    background-color:white;
+    border-radius: 10px;
+    align-items: center;
+    padding: 20px;
+    /*box-shadow: 5px 10px 10px #eeeeee;*/
+    padding-left: 10%;
+    padding-right: 10%;     
+}
+
+.hrSearch{
+    width: 100%;
+    height: 2px !important;
+    color: black;
+    opacity: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.searchButton {
+    margin-top: 30px;
+    background-color: #D6DBE6;
+    color: black;
+    border: 0px solid black;
+    font-weight: bold;
+    border-radius: 20px;
+    opacity:100%;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+}
+
+.searchButton:hover{
+    background-color: #b1bbd0;
 }
 
 .formSearch {
     border: none;
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     
 }
 
@@ -35,8 +64,10 @@
 }
 
 .searchInput{
-    padding:10px;
-    margin-left: 50px;
+    width: auto;
+    padding: 10px;
+    padding-left: 0px;
+    display: block;
     border-radius: 10%;
 
 }
@@ -47,7 +78,7 @@
 
 .doctorCards {
     margin: 50px;
-    margin-top: 20px;
+    margin-top: 30px;
     align-items: center;
     display: flex;
     flex-direction: column;

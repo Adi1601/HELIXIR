@@ -26,7 +26,6 @@ export default class Profile extends Component{
       doc_id : '',
       avgrat : '',
       comments : [],
-      once : true
     }
   }
 
@@ -37,7 +36,6 @@ export default class Profile extends Component{
     const data = {
       doctor_id : this.props.location.state.data._id,
     }
-    console.log(data.doctor_id);
 
     axios.post('http://localhost:5000/review/loadprofile', data)
         .then( (res) => {
@@ -55,20 +53,7 @@ export default class Profile extends Component{
     });
 
   }
-  
-  /*fetchUserDetails=(user_id)=>{
-    //console.log(user_id);
-    axios.get("http://localhost:5000/userapi/getUserDetails/"+user_id,{
-        headers: {
-            "content-type": "application/json"
-          }
-    }).then(res=>{
-        console.log(res);
-        this.setState({email:res.data.results[0].email});
-        this.setState({profileImage:res.data.results[0].profileImage})
-    })
-    .catch(err=>console.log(err))
-}*/
+
 
   render() {
 
@@ -100,10 +85,8 @@ export default class Profile extends Component{
             <div>
               {Comments}
             </div>
-            
-
-          </div>              
-        </>
+        </div>              
+      </>
     );
   
   }

@@ -21,15 +21,21 @@ router.route('/add').post((req, res) => {
   newReview.save()
     .then(() => res.json('Review added!'))
     .catch(err => res.status(400).json('Error: ' + err));
-});
+  });
 
 router.route('/loadprofile').post(async (req,res) => {
   var id_doctor = req.body.doctor_id;
-  console.log(id_doctor);
   var avg_rating = 0;
   var num_ratings = 0;
+  /* await - async request 
+  ** .find() looks for all the occurences int the selection
+  **    first parameter is a query object
+  **    second parameter is the projection - describes which fields to include in the result
+  */    
+
   let result = await Review.find({id_doc: {$regex : id_doctor}},);
-  if (!result) return res.status(404).json("doctor not found");
+  
+  if (!result) return res.status(404).json("Doctor not found");
   else {
     num_ratings = result.length;
     for (let index = 0; index < num_ratings; index++) {
@@ -38,11 +44,12 @@ router.route('/loadprofile').post(async (req,res) => {
     avg_rating = avg_rating / num_ratings;
   }
 
+  
   return res.status(200).json({
     rating: avg_rating,
     review: result,
     message: "Found review for doctor",
-});
+  });
 })
 
 module.exports = router;

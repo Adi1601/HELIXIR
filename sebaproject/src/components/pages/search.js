@@ -105,48 +105,53 @@ export default class SearchDoctor extends Component{
         return(
             <>
             <Navbar/>
-            <div className="searchBox">
-                <h3><b>Filters</b></h3>
-                <br/>
-                <form className="formSearch" onSubmit={this.onSubmit}>
-                    
-                    <div className="searchInput">
-                        <input
-                            id="search-name-bar"
-                            placeholder="Doctor's name"
-                            value={this.state.searchName}
-                            onChange={this.onSearchName}/>
-                    </div>
-                    <div className="searchInput">
-                        <input
-                            id="search-city-bar"
-                            placeholder="City"
-                            value={this.state.searchCity}
-                            onChange={this.onSearchCity}/>
-                    </div>
-                    <div className="searchInput">
-                        <input
-                            id="search-spec-bar"
-                            placeholder="Speciality"
-                            value={this.state.searchSpec}
-                            onChange={this.onSearchSpec}/>
-                    </div>
-                    <div className="buttonPos">
-                        <ButtonWrapper>
-                            <Button  onClick={this.onSubmit}>Search</Button>
-                        </ButtonWrapper>
-                    </div>
-                </form>
-            </div>
-            <div className="searchResults">
-                <div className="resultAnnounce">
-                Results: {this.state.searchName}
-                </div>
-                <div className="doctorCards">
-                    {DoctorEntries}
-                </div>
-            </div>
+            <div className="searchPage">
+                <div className="searchBox">
+                    <h3><b>Filters</b></h3>
+                    <br/>
+                    <form className="formSearch" onSubmit={this.onSubmit}>
+                        
+                        <div className="searchInput">
+                            <label><b>Doctor's Name </b></label>
+                            <input
+                                id="search-name-bar"
+                                placeholder="e.g. Müller"
+                                value={this.state.searchName}
+                                onChange={this.onSearchName}/>
+                        </div>
+                        <hr className="hrSearch"/>
+                        <div className="searchInput">
+                            <label><b>City</b></label>
+                            <input
+                                id="search-city-bar"
+                                placeholder="e.g. Munich"
+                                value={this.state.searchCity}
+                                onChange={this.onSearchCity}/>
+                        </div>
+                        <hr className="hrSearch"/>
+                        <div className="searchInput">
+                            <label><b>Speciality</b></label>
+                            <input
+                                id="search-spec-bar"
+                                placeholder="e.g. Cardiology"
+                                value={this.state.searchSpec}
+                                onChange={this.onSearchSpec}/>
+                        </div>
 
+                        <button onClick={this.onSubmit} className="searchButton">
+                            Search
+                        </button>
+                    </form>
+                </div>
+                <div className="searchResults">
+                    {/* <div className="resultAnnounce">
+                    Results: {this.state.searchName}
+                    </div> */}
+                    <div className="doctorCards">
+                        {DoctorEntries}
+                    </div>
+                </div>
+            </div>
             </>
         );
     }

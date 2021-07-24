@@ -25,7 +25,7 @@
     display: block;
 }
 
-hr{
+.profilePage > hr{
   width: 100%;
   height: 3px !important;
   opacity: 70% !important;

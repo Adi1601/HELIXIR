@@ -54,4 +54,8 @@ router.route('/login').post( async (req, res) => {
   });
 })
 
+router.route('/logout').post( async (req, res) => {
+    localStorage.clear();
+})
+
 module.exports = router;

@@ -1,6 +1,6 @@
 .col-2 {
-    margin-top : 10px;
-    width: 80% !important;
+    width: 100% !important;
+    display: grid;
 }
 
 .card{
@@ -28,24 +28,31 @@
 
 .appointmentButton{
     background-color: #1D3D75;
-    color: white    ;
-    font-weight: bold;
+    color: white;
+    border: 0px solid #1D3D75;
+    font-weight:bold;
     border-radius: 10px;
-    opacity:100%;
     padding: 10px;
-    text-align: right;
+    text-align: center;
     	
 }
 
 .appointmentButton:hover{
-    background-color: #1D3D75;
-    opacity: 70%;
-    padding: 9px;
-    color: white;
+    background-color: #152d56;
 }
 
 .cardTitle > a{
     font-size: small;
     font-weight: 200;
     color: grey;
+}
+
+.wrapper{
+    background-color: grey;
+    padding: 20px;
+    border-radius: 10px;
+    background-image: url(../../images/helixir.png);
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position:center;
 }

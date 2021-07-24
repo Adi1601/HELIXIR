@@ -123,7 +123,7 @@ onSubmit(e) {
                     </div>
                     <br/>
                     <p className="noAccount">
-                      Already have an account? Login <a href="/signup">here</a>
+                      Already have an account? Login <a href="/login">here</a>
                     </p>
                     <ButtonWrapper>
                           <Button onClick={this.onSubmit}>
