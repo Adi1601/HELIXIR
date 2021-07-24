@@ -55,7 +55,8 @@ router.route('/login').post( async (req, res) => {
 })
 
 router.route('/logout').post( async (req, res) => {
-    localStorage.clear();
+    //localStorage.clear();
+    return res.status(200).json({message: "User Logged Out"});
 })
 
 module.exports = router;

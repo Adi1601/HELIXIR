@@ -78,7 +78,9 @@ export default class LoginUser extends Component{
           this.extractUser(res.data.token);
           console.log("email: " + this.userJson.emailR);
         }
-        this.props.history.push("/homep");
+        console.log("pushing to homep");
+        //this.props.history.push("/homep");
+        window.location.href='/homep';
       })
       .catch((error) => {alert(error.message)});
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle} from 'reactstrap';
+import Rating from '@material-ui/lab/Rating';
 import Profile from '../pages/profile';
 import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
 import {Button} from '../ButtonElements';
@@ -46,7 +47,7 @@ export default withRouter(class DoctorEntry extends Component {
     }
 
     render() {
-        const {name, city, speciality, hospital, _id} = this.props;
+        const {name, city, speciality, hospital, avg_rating, _id} = this.props;
 
         //var stars = "*".repeat(rating);
 
@@ -61,6 +62,7 @@ export default withRouter(class DoctorEntry extends Component {
                         <CardTitle>
                                 <h4 id="doctorCardTitle"><b>Dr. {name}  </b> 
                                 <a onClick={this.onClick}> [more info] </a> </h4>
+                                <Rating name="read-only" value={avg_rating} readOnly />
                         </CardTitle>
                         <CardBody id="doctorCardBody">
                                 <CardText id="doctorCardText"> <b>City:</b> {city}</CardText>

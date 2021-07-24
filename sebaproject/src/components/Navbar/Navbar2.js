@@ -7,12 +7,13 @@ const Navbar2 = ({toggle}) => {
 
     const onClick = (e) => {
         e.preventDefault();
-        let token = window.localStorage["jwtToken"];
+        //let token = window.localStorage["jwtToken"];
 
+        localStorage.removeItem('jwToken');
         localStorage.clear();
-        axios.post('http://localhost:5000/users/logout', token)
+        axios.post('http://localhost:5000/users/logout')
       .then( (res) => {
-        this.props.history.push("/");
+        window.location.href='/';
       })
       .catch((error) => {alert(error.message)});
       
