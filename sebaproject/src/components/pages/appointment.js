@@ -23,6 +23,7 @@ import LoginUser from './login-user.component';
 		const [email, setEmail] = useState("");
 		const [doctor_name, setDoctorName] = useState("");
 		const [doctor_id, setDoctorId] = useState("");
+		const [doctor_speciality, setDoctorSpeciality] = useState("");
 
 		useEffect(() => {
 			if (localStorage.getItem("jwtToken") !== null) {
@@ -39,6 +40,7 @@ import LoginUser from './login-user.component';
 				setEmail(userJ.email);
 				setDoctorName(localStorage.getItem("doctor"));
 				setDoctorId(localStorage.getItem("doctor_id"));
+				setDoctorSpeciality(localStorage.getItem("doctor_speciality"));
 				//console.log(localStorage.getItem("doctor_id"));
 
 				//setDoctorId()
@@ -62,7 +64,8 @@ import LoginUser from './login-user.component';
 					name: username,
 					email: email,
 					doctor_name: doctor_name,
-					doctor_id:doctor_id,
+					doctor_speciality: doctor_speciality,
+					doctor_id: doctor_id,
 		   			date : date,
 		   			start_time: time,
 		   			motive: motive
@@ -126,7 +129,7 @@ import LoginUser from './login-user.component';
 								<br/>
 
 
-								<Button  id="buttonProceed" variant="primary" type="submit" onClick={(e) => onSubmit(e)} > Proceed </Button>
+								<Button  id="buttonProceed" variant="primary" type="submit" onClick={(e) => onSubmit(e)} > Proceed to payment </Button>
 								<a href="/search" id="backButton"> Back</a>
 								<br/>
 									
