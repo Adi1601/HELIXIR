@@ -12,9 +12,10 @@
   }
 
 
-.backButton{
+#backButton{
   /*composes: Button from '../ButtonElements';*/
   color: grey !important;
+  background-color: white;
   width: 30px;
   padding: 40px;
   margin: 20px;

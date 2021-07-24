@@ -5,8 +5,8 @@ import { useHistory } from "react-router-dom";
 //import {Card,Container,CardHeader,CardMedia,CardContent} from '@material-ui/core';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle} from 'reactstrap';
 import {Button} from '../ButtonElements';
-import image from '../../images/cat.jpeg';
 import axios from 'axios';
+import logo from '../../images/helixir.png'
 import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
 
 
@@ -69,18 +69,21 @@ export default class Profile extends Component{
     return (
       <>
         <Navbar/>
-        <Button to = "search" className= "backButton"> Back </Button>
+        <Button to = "search" id="backButton"> Back </Button>
             
         <div className="profilePage">
             <Card className="text-center">
-              <CardTitle tag="h3">I'm Dr. {name}</CardTitle>
-              <hr/>
-              <CardText className="text-center">
-                <Rating name="read-only" value={this.state.avgrat} readOnly />
-                <br/><br/>
-                <p>City: {city}</p>
-                <p>Speciality: {speciality}</p>
-              </CardText>
+              <CardImg top width="100%" src={logo}/>
+              <CardBody>
+                <CardTitle tag="h3">I'm Dr. {name}</CardTitle>
+                <hr/>
+                <CardText className="text-center">
+                  <Rating name="read-only" value={this.state.avgrat} readOnly />
+                  <br/><br/>
+                  <p>City: {city}</p>
+                  <p>Speciality: {speciality}</p>
+                </CardText>
+              </CardBody>
             </Card>
             <div>
               {Comments}
