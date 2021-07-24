@@ -12,6 +12,7 @@ import Signup from './components/pages/signup';
 import Profile from './components/pages/profile';
 import PatientView from './components/pages/patient-view';
 import SearchDoctor from './components/pages/search';
+import Success from './components/pages/payment_successful';
 
 import 'bootstrap/dist/css/bootstrap.min.css';//CSS framework for front-end formatting
 
@@ -56,6 +57,9 @@ function App() {
 
       <Switch>
         <Route path = "/payment" exact component={payments}/>
+      </Switch>
+      <Switch>    
+        <Route path="/success" exact component = {Success}/>
       </Switch>
     </Router>
     );
