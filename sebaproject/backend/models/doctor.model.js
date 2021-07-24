@@ -32,6 +32,10 @@ const doctor = new schema({
         type:Number,
         required:false,
     },
+    num_ratings:{
+        type:Number,
+        required:true,
+    }
 });
 
 const Doctor = mongoose.model('Doctor', doctor);
