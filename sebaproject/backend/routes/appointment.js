@@ -14,6 +14,13 @@ router.route('/').get(authorizeToken, (req,res)=> {
     	.catch(err => res.status(400).json('Error: ' + err));  	
 });
 
+//get localhost:5000/appointment/:username
+router.route('/:username').get(authorizeToken, (req,res)=> {
+	Appointment.find({name: req.params.username})
+    	.then(user_appointments => res.json(user_appointments))
+    	.catch(err => res.status(400).json('Error: ' + err));  	
+});
+
 //post localhost:5000/appointment/appointmentCreate
 router.route('/appointmentCreate').post(authorizeToken, (req,res) => {
     // Creates a new record from a submitted form
@@ -21,6 +28,7 @@ router.route('/appointmentCreate').post(authorizeToken, (req,res) => {
 		name: req.body.name,
 		email: req.body.email,
 		doctor_name: req.body.doctor_name,
+		doctor_speciality: req.body.doctor_speciality,
 		doctor_id: req.body.doctor_id,
 		start_time: req.body.start_time,
 		motive: req.body.motive
