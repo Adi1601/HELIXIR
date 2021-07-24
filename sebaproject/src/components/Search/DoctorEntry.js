@@ -5,7 +5,8 @@ import Profile from '../pages/profile';
 import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
 import {Button} from '../ButtonElements';
 import "./doctorsEntry.css";
-
+import { requirePropFactory } from '@material-ui/core';
+import logo from '../../images/helixir.png'
 
 export default withRouter(class DoctorEntry extends Component {
 
@@ -53,21 +54,25 @@ export default withRouter(class DoctorEntry extends Component {
         return (
             <>
             <div className="col-2">
-                <Card>
+                <Card id="doctorCard">
+                    <img id="doctorImage"src={logo}/>
+                    <div className="cardInfo">
+
                         <CardTitle>
-                            <div className="wrapper">
-                                <p className="cardTitle"><b>Dr. {name}</b> <a onClick={this.onClick}> [more info] </a> </p>
-                            </div>
+                                <h4 id="doctorCardTitle"><b>Dr. {name}  </b> 
+                                <a onClick={this.onClick}> [more info] </a> </h4>
                         </CardTitle>
-                        <CardBody>
-                            <CardText> <b>City:</b> {city}</CardText>
-                            <CardText><b>Speciality:</b> {speciality}</CardText>
-                            <CardText><b>Hospital: </b>{hospital}</CardText>
-                            <br/> 
-                        <button onClick={this.onBookApp} className="appointmentButton">
-                            Book Appointment
-                        </button>
+                        <CardBody id="doctorCardBody">
+                                <CardText id="doctorCardText"> <b>City:</b> {city}</CardText>
+                                <CardText id="doctorCardText"><b>Speciality:</b> {speciality}</CardText>
+                                <CardText id="doctorCardText"><b>Hospital: </b>{hospital}</CardText>
+                                <br/> 
+                                <button onClick={this.onBookApp} className="appointmentButton">
+                                    Book Appointment
+                                </button>
                         </CardBody>
+                        </div>
+
                 </Card>
 
             </div>

@@ -46,7 +46,7 @@ router.route('/loadprofile').post(async (req,res) => {
   **    second parameter is the projection - describes which fields to include in the result
   */    
 
-  let result = await Review.find({id_doc: {$regex : id_doctor}},);
+  let result = await Review.find({id_doc: {$regex : id_doctor}});
   
   if (!result) return res.status(404).json("Doctor not found");
   else {

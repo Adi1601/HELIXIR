@@ -26,15 +26,15 @@ const payments = () =>{
       <>
       <Navbar/>
       <div className="paymentarea">
-      <h2>Pay and Confirm your appointment!</h2>
-      <h3>Convenience Fee: 3€</h3>
-      <div className="wrapper">
-      <p>Choose your payment method!</p>
-      <PayPalButton
-        createOrder={(data, actions) => createOrder(data, actions)}
-        onApprove={(data, actions) => onApprove(data, actions)}
-      />
-      </div>
+        <h2>Pay and Confirm your appointment!</h2>
+        <h3>Convenience Fee: 3€</h3>
+        <div className="wrapper">
+          <p>Choose your payment method!</p>
+          <PayPalButton
+            createOrder={(data, actions) => createOrder(data, actions)}
+            onApprove={(data, actions) => onApprove(data, actions)}
+          />
+        </div>
       </div>
       </>
     );
