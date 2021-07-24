@@ -1,1 +1,31 @@
-/* Dummy file, nothing here yet */
+#patient_view_card{
+	padding-left: 80px;
+	padding-right: 63px;
+	background-color: white;
+}
+
+#username_header {
+	text-align: center;
+}
+
+#patient_email {
+	font-size: 20px;
+	font-weight: 450;
+	
+	padding-left: 80px;	
+}
+
+#yourapp{
+	font-size: 20px;
+	font-weight: 450;
+
+	padding-left: 80px;
+}
+
+hr {
+	padding-right: 100px;
+}
+
+
+
+
