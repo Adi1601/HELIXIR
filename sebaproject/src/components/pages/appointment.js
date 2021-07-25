@@ -1,3 +1,5 @@
+//Defines the appointment component useful in use case 2: booking appointments
+
 import React, {useState, useEffect} from 'react';
 import Navbar, { navbarLocation } from '../Navbar';
 import DatePicker from "react-datepicker";
@@ -5,7 +7,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import LoginUser from './login-user.component';
-
 import "./css/appointment.css";
 
 
@@ -44,9 +45,7 @@ import "./css/appointment.css";
 				setDoctorName(localStorage.getItem("doctor"));
 				setDoctorId(localStorage.getItem("doctor_id"));
 				setDoctorSpeciality(localStorage.getItem("doctor_speciality"));
-				//console.log(localStorage.getItem("doctor_id"));
 
-				//setDoctorId()
 			} else {
 				alert("You have to be logged in to make an appointment!");
 			}
@@ -148,19 +147,3 @@ import "./css/appointment.css";
  }
  
 export default Appointment;
-
-
-/*
-
-
-<div class="container h-100"> 
-							<a id="text"> You have to be logged in to make an appointment  </a><br/><br/>
-							<Button  variant="primary" type="submit" onClick={(e) =>  window.location.href='/login'} > Login </Button>  <br/>
-							<a id="text"> Don't have an account? </a><br/><br/>
-							  		
-							<Button  variant="primary" type="submit" onClick={(e) =>  window.location.href='/signup'} > SignUp </Button>   
-					
-					 	</div>
-					 	
-					 	
-*/
