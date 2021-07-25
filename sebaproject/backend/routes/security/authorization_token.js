@@ -3,7 +3,7 @@
 const jwt = require('jsonwebtoken');
 const JwtSecret = "Very Secret";
 
-//checks to see if the login token defined in the auth.js route exists
+//checks to see if the login token exists as defined in the auth.js route
 const verifyData = async (token) => {
     try {
        await jwt.verify(token, JwtSecret,  {expiresIn: 86400});
