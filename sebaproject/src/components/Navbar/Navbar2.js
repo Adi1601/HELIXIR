@@ -34,7 +34,7 @@ const Navbar2 = ({toggle, myLocation}) => {
                         <NavLinks to='/search' highlighted = {myLocation === navbarLocation.search}> Search Doctors</NavLinks>
                     </NavItem>
                     <NavItem>
-                        <NavLinks to='/homep'highlighted = {myLocation === navbarLocation.profile} >Appointments</NavLinks>
+                        <NavLinks to='/homep'highlighted = {myLocation === navbarLocation.profile} > My Appointments</NavLinks>
                     </NavItem>
                     <NavItem>
                         <NavLinks onClick={(e) => onClick(e)}>Logout</NavLinks>

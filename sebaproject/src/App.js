@@ -6,7 +6,6 @@ import "@fontsource/roboto/" ;
 
 /*import "bootstrap/dist/css/bootstrap.min.css"*/
 import Tele from './Tele';
-import TeleEval from './components/pages/tele-eval';
 import Review from './components/pages/review';
 import Signup from './components/pages/signup';
 import Profile from './components/pages/profile';
@@ -36,9 +35,6 @@ function App() {
       </Switch>
       <Switch>
       <Route path = "/tele" exact component={Tele}/>
-      </Switch>
-      <Switch>
-      <Route path = "/tele/form" exact component={TeleEval}/>
       </Switch>
       <Switch>
       <Route path = "/signup" exact component={Signup}/>

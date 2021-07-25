@@ -28,7 +28,6 @@ export default withRouter(class DoctorEntry extends Component {
             _id: this.props._id,
         }
 
-        console.log(doctorData);
         this.props.history.push({pathname: '/profile', state: {data: doctorData}});
 
     }

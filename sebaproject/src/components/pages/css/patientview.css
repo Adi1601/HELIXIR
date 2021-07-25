@@ -45,11 +45,23 @@
 #appointmentCard{
 	border-radius: 20px;
 	box-shadow: 0 0 3px #ccc;
+	padding: 10px;	
 }
 
 #appointmentCard:hover{
 	background-color:#D6DBE6;
 }
 
+#cardLayout{
+	display: grid;
+    grid-template-columns: 80% 20%;
+	align-items: center;
+	height: max-content;
+}
+
+#infoAppointment>p{
+	margin-top: 8px !important;
+	margin-bottom: 0px !important;
+}
 
 

@@ -8,6 +8,7 @@ import logo from '../../images/user.png'
 import { AiOutlineMail } from 'react-icons/ai'
 
 import "./css/patientview.css";
+import "../Search/doctorsEntry.css";
 
 let token = window.localStorage["jwtToken"];
 
@@ -56,6 +57,7 @@ export default class PatientView extends Component{
 		}
 	}
 
+	
   
   renderItems() {
   	if(this.state.user_appointments) {
@@ -65,15 +67,20 @@ export default class PatientView extends Component{
 	    	<div id="patient_view_card" >
 				
 				<Card id="appointmentCard">
-				    <Card.Body>
-						<Card.Title> Dr. {item.doctor_name} </Card.Title>
-						 <Card.Text>
-						 	  Doctor's speciality: {item.doctor_speciality}<br/>
-						 	  Motive: {item.motive}<br/>
-							  Date: {item.date.split('T')[0]}<br/>
-							  Time: { item.start_time}:00
-	  	 
-						  </Card.Text>
+				    <Card.Body id="cardLayout">
+						<div>
+							<Card.Title><b> Dr. {item.doctor_name} </b></Card.Title>
+							<Card.Text id="infoAppointment">
+								<p>When: {item.date.split('T')[0]},  { item.start_time}:00 (CET)</p>
+								<p>Doctor's speciality: {item.doctor_speciality}</p>
+								<p>Motive: {item.motive}</p>
+							</Card.Text>
+						</div>	
+						<a href='/tele'>
+							<button className="appointmentButton">
+									Start Appointment
+							</button>
+						</a>
 				     
 				    </Card.Body>
 
