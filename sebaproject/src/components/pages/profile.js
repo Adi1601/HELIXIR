@@ -43,6 +43,15 @@ export default class Profile extends Component{
 
   }
 
+  onBookApp (e) {
+        
+    //when the "book appointment" button in clicked, the user is redirected to the appointment page
+     window.location.href='/appointment';
+     window.localStorage["doctor"] = this.props.name;
+     window.localStorage["doctor_id"] = this.props._id;
+     window.localStorage["doctor_speciality"] = this.props.speciality;
+ }
+
 
   render() {
 
@@ -69,7 +78,11 @@ export default class Profile extends Component{
                     <p><FaCity id="iconsProfile" /> <b>City: </b>{city}</p>
                     <p> <AiFillMedicineBox id="iconsProfile"/> <b>Speciality:</b> {speciality}</p>
                     <p> <FaHospital id="iconsProfile"/> <b>Hospital: </b>{hospital}</p>
+                    <br/>
                   </CardText>
+                  <button onClick={this.onBookApp} className="appointmentButton">
+                      Book Appointment
+                  </button>
                 </CardBody>
               </Card>
               <div id="commentSection">
