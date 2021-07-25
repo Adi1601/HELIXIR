@@ -48,11 +48,6 @@ export const ServicesCard = styled.div`
     box-shadow: 0 1px 3px rgba(0,0,0,0,2);
     transistion: all 0.2s ease-in-out;
 
-    &:hover{
-        transform: scale(1.02);
-        transistion: all 0.2s ease-in-out;
-        cursor: pointer;
-    }
 `;
 
 export const ServicesIcon = styled.img`
@@ -63,7 +58,7 @@ export const ServicesIcon = styled.img`
 
 export const ServicesH1 = styled.h1`
     font-size: 2.5rem;
-    color: #1C3C74;
+    color: #ffffff;
     margin-bottom: 64px;
     
     @media and screen (max-width: 480px){

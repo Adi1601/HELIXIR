@@ -17,15 +17,6 @@ const Navbar1 = ({toggle, myLocation}) => {
                     <NavItem>
                         <NavLinks to='/search' highlighted = {myLocation === navbarLocation.search} >Search Doctors</NavLinks>
                     </NavItem>
-                     {/*<NavItem>
-                        <NavLinks to='/tele/form'>Teleconsultation</NavLinks>
-                    </NavItem>
-                     <NavItem>
-                        <NavLinks to='/offers'>Partner Offers</NavLinks>
-                    </NavItem>
-                    <NavItem>
-                        <NavLinks to='/signup'>Sign Up</NavLinks>
-                    </NavItem> */}
                 </NavMenu>
                 <NavBtn>
                     <NavBtnLink to='/login'>Login</NavBtnLink>

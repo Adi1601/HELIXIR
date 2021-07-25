@@ -5,7 +5,7 @@ export const homeObjOne = {
     lightTextDesc: false,
     topLine: '#1',
     headline: 'Unrestricted Access to Healthcare',
-    description: 'Get access to Health care services anytime, anywhere..',
+    description: 'Get access to Healthcare services anytime, anywhere..',
     buttonLabel: 'Get Started',
     imgStart: false,
     img: require('../../images/1.png').default,

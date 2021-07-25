@@ -41,3 +41,16 @@
     margin:10px;
     margin-bottom: 20px;
 }
+
+#buttonSection{
+    margin-right: 45px;
+    margin-left: 45px;
+}
+
+
+#footNote {
+    color: grey;
+    padding-top: 10px;
+    text-align: left;
+    font-weight: normal;
+}

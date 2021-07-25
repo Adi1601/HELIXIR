@@ -3,6 +3,7 @@ import Navbar, { navbarLocation } from '../Navbar';
 import DoctorEntry from '../Search/DoctorEntry';
 import axios from 'axios';
 import './css/search.css';
+import {FiFilter} from 'react-icons/fi'
 
 export default class SearchDoctor extends Component{
     constructor(props) {
@@ -142,7 +143,7 @@ export default class SearchDoctor extends Component{
             <Navbar myLocation={navbarLocation.search}/>
             <div className="searchPage">
                 <div className="searchBox">
-                    <h3 ><b>Filters</b></h3>
+                    <h3 style={{marginLeft: "-100px"}}> <b>Filters</b></h3>
                     <br/>
                     <form className="formSearch" onSubmit={this.onSubmit}>
                         
@@ -182,10 +183,13 @@ export default class SearchDoctor extends Component{
                     {/* <div className="resultAnnounce">
                     Results: {this.state.searchName}
                     </div> */}
-                    <select onChange={this.setSortType}>
-                        <option value="alphabet">Doctor's Name A-Z</option>
-                        <option value="rating">Rating High-Low</option>
-                    </select>
+                    <div id = "sortFilter">
+                        <FiFilter/>
+                        <select onChange={this.setSortType} id="sortFilterBox">
+                            <option value="alphabet">Doctor's Name A-Z</option>
+                            <option value="rating">Rating High-Low</option>
+                        </select>
+                    </div>
                     <div className="doctorCards">
                         {DoctorEntries}
                     </div>

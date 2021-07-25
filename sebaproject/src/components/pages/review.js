@@ -91,7 +91,7 @@ export default class Review extends Component{
 
                         />
                         <div>
-                          <label className= "text" htmlFor="comment">
+                          <label className= "evalFieldLabelDescription" htmlFor="comment">
                               Comment
                           </label>
                           <br/>
@@ -99,23 +99,14 @@ export default class Review extends Component{
                               onChange={this.onChangeComment}></textarea>
               
                         </div>
+                        <p id= "footNote"> Reach out to us at help@helixir.de, if you had any issues during your appointment, or for any feedback. We'd be happy to help! </p>
                       </div>
                     </div>
 
-                    <div className="evalFields">
-                          <a href="/" id="backButton"> Skip</a>
-                          &nbsp;&nbsp;&nbsp;
+                    <div id="buttonSection">
+                          <a href="/homep" id="backButton"> Skip</a>
                           <Button  id="buttonProceed" variant="primary" type="submit" onClick={this.onSubmit} > Submit </Button>
 									        
-                        {/* <ButtonWrapper>
-                            <Button onClick={this.onSubmit}>
-                                    Submit
-                            </Button>
-                            &nbsp;&nbsp;&nbsp;
-                            <Button to = "/">
-                                Skip
-                            </Button>
-                        </ButtonWrapper> */}
                     </div>
                 </form>
             </div>
