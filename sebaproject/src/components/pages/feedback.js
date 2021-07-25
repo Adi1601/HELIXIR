@@ -13,8 +13,6 @@ export default class Feedback extends Component{
   
   render() {
     const {review} = this.props;
-
-    console.log(review);
     return (
       <>
            <blockquote id="reviewCard">
