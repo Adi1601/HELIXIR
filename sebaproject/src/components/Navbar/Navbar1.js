@@ -9,10 +9,10 @@ const Navbar1 = ({toggle, myLocation}) => {
         <>
         <Nav>
             <NavbarContainer>
-                <NavLogo to="/">HELIXIR</NavLogo>
-                <MobileIcon onClick={toggle}>
-                    <FaBars/>
-                </MobileIcon>
+                <NavLogo to="/">
+                   <img src='https://i.postimg.cc/wRYjt99h/hexilir2.png' border='0' alt='hexilir2'/>
+                   HELIXIR
+                </NavLogo>
                 <NavMenu>
                     <NavItem>
                         <NavLinks to='/search' highlighted = {myLocation === navbarLocation.search} >Search Doctors</NavLinks>

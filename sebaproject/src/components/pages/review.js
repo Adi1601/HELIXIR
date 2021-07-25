@@ -95,7 +95,7 @@ export default class Review extends Component{
                               Comment
                           </label>
                           <br/>
-                          <textarea rows="5" cols="60" name="text" placeholder="Enter text" value={this.comment}
+                          <textarea rows="5" cols="50" name="text" placeholder="Enter text" value={this.comment}
                               onChange={this.onChangeComment}></textarea>
               
                         </div>

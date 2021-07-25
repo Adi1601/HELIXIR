@@ -25,10 +25,10 @@ const Navbar2 = ({toggle, myLocation}) => {
         <>
         <Nav>
             <NavbarContainer>
-                <NavLogo to="/"> HELIXIR</NavLogo>
-                <MobileIcon onClick={toggle}>
-                    <FaBars/>
-                </MobileIcon>
+                <NavLogo to="/">
+                   <img src='https://i.postimg.cc/wRYjt99h/hexilir2.png' border='0' alt='hexilir2'/>
+                   HELIXIR
+                </NavLogo>
                 <NavMenu>
                     <NavItem>
                         <NavLinks to='/search' highlighted = {myLocation === navbarLocation.search}> Search Doctors</NavLinks>
@@ -39,12 +39,6 @@ const Navbar2 = ({toggle, myLocation}) => {
                     <NavItem>
                         <NavLinks onClick={(e) => onClick(e)}>Logout</NavLinks>
                     </NavItem>
-                    {/* <NavItem>
-                        <NavLinks to='/offers'>Partner Offers</NavLinks>
-                    </NavItem>
-                    <NavItem>
-                        <NavLinks to='/signup'>Sign Up</NavLinks>
-                    </NavItem> */}
                 </NavMenu>
             </NavbarContainer>
         </Nav>
