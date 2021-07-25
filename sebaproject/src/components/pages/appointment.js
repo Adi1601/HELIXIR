@@ -56,9 +56,9 @@ import "./appointment.css";
 			e.preventDefault();
 							
 			if (date.getTime() ==  (new Date()).getTime() || time == 0 ) { //if the date and time have their initial states, the user needs to make a choice
-				alert("Please choose the date and time for the appointment!");
+				alert("Please choose a date later than today and a time for the appointment!");
 			} else if (date.getTime() < (new Date()).getTime() ) { //the user cannot choose a date earlier than today's date
-				alert("Please choose an appropriate date!");
+				alert("Please choose an appointment date that is not earlier than today!");
 			} else {
 				
 				const body = {
