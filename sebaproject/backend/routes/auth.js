@@ -1,12 +1,9 @@
 const router = require("express").Router();
-const { Compare } = require("@material-ui/icons");
 let User = require('../models/user.model');
 const jwt = require("jsonwebtoken");
 const JwtSecret = "Very Secret";
 var isPasswordValid = 0;
 
-
-//router.post("/login", authController.login);
 
 
 router.route('/').get((req, res) => {
@@ -19,7 +16,6 @@ router.route('/add').post((req, res) => {
   const username = req.body.username;
   const email = req.body.email;
   const password = req.body.password;
-  //console.log("post received: %s %s", username, password);
   const newUser = new User({username, email, password});
 
   newUser.save()
@@ -55,7 +51,6 @@ router.route('/login').post( async (req, res) => {
 })
 
 router.route('/logout').post( async (req, res) => {
-    //localStorage.clear();
     return res.status(200).json({message: "User Logged Out"});
 })
 

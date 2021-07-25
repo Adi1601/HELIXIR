@@ -14,7 +14,6 @@ router.route('/search').post(async (req, res) => {
     const myobj_name = req.body.sname;
     const myobj_city = req.body.scity;
     const myobj_spec = req.body.sspec;
-    //console.log("got a request for " + myobj);
     
     var searchname = ".*" + myobj_name + ".*";
     var searchcity = ".*" + myobj_city + ".*";
@@ -26,7 +25,6 @@ router.route('/search').post(async (req, res) => {
                             .sort([['name', 1]]);
     if (!result) return res.status(404).json("doctor not found");
 
-    //console.log("found: " + result);
 
     return res.status(200).json({
         doctor: result,
@@ -38,8 +36,7 @@ router.route('/search').post(async (req, res) => {
 router.route('/add').post((req, res) => {
     const name = req.body.name;
     const city = req.body.city;
-    //const rating = req.body.rating;
-    //console.log("post received: %s %s", username, password);
+
     const newDoctor = new Doctor({name, city});
   
     newDoctor.save()

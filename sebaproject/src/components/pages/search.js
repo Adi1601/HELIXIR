@@ -31,33 +31,21 @@ export default class SearchDoctor extends Component{
             scity: this.state.searchCity,
             sspec: this.state.searchSpec,
         }
-
-        console.log("searching for first load:", search);
         
         axios.post('http://localhost:5000/doctors/search', search)
         .then( (res) => {
             const docs = res.data.doctor;
-            for(let i=0; i<docs.length; i++) {
-                console.log("doctors rec: " + docs[i].name);
-            }
             this.setState({ doctors: docs})
-            console.log(this.state.doctors);
         })
         .catch(function(err) {
-            console.log("Rec Err: " + err.response);
+            console.log(err.response);
         });
     }
 
     componentDidUpdate () {
-        console.log("sort Enable ");
-        console.log(this.state.sortEnable);
         if (this.state.sortEnable) {
-            console.log("updating");
-            console.log(this.state.sortType);
             this.setState({sortEnable : false});
             this.sortDoctors(this.state.sortType);
-            console.log("Kartikay printing doctors");
-            console.log(this.state.doctors);
         }
     }
 
@@ -110,17 +98,11 @@ export default class SearchDoctor extends Component{
             scity: this.state.searchCity,
             sspec: this.state.searchSpec,
         }
-
-        console.log("searching for:", search);
         
         axios.post('http://localhost:5000/doctors/search', search)
         .then( (res) => {
             const docs = res.data.doctor;
-            for(let i=0; i<docs.length; i++) {
-                console.log("doctors rec: " + docs[i].name);
-            }
             this.setState({ doctors: docs})
-            console.log(this.state.doctors);
         })
         .catch(function(err) {
             console.log("Rec Err: " + err.response);
@@ -129,11 +111,7 @@ export default class SearchDoctor extends Component{
 
     render() {
         const doctors = this.state.doctors;
-
-        console.log("Printing doctors list");
-        console.log(doctors);
         const DoctorEntries = doctors.map((doctor, index) => {
-            if (doctors.length) console.log('got something');
             return <DoctorEntry key={doctor._id}{...doctor}/>
         });
 

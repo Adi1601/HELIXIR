@@ -45,9 +45,6 @@ export default class Review extends Component{
   onSubmit(event) {
     event.preventDefault();
 
-    console.log("The feedback was submitted with the following data:");
-    console.log(this.state);
-
 
     const review = {
       rating: this.state.rating,

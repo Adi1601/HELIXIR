@@ -33,15 +33,12 @@ export default withRouter(class DoctorEntry extends Component {
     }
 
     onBookApp (e) {
-    
-        console.log("Booking Appointment for " + this.props.name);
         
        //when the "book appointment" button in clicked, the user is redirected to the appointment page
         window.location.href='/appointment';
         window.localStorage["doctor"] = this.props.name;
         window.localStorage["doctor_id"] = this.props._id;
         window.localStorage["doctor_speciality"] = this.props.speciality;
-        console.log(this.props._id);
     }
 
     render() {

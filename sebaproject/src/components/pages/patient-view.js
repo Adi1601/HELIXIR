@@ -34,7 +34,6 @@ export default class PatientView extends Component{
     			let base64 = base64Url.replace("-", "+").replace("_", "/");
     			//atob() function decodes a string of data which has been encoded using Base64 encoding.
 				let userJ = JSON.parse(window.atob(base64));
-				console.log(userJ);
 
 				this.setState({username : userJ.username},this.findRoutes );     
 				this.setState({email : userJ.email});
@@ -48,7 +47,6 @@ export default class PatientView extends Component{
 				  .then(res => {
 					console.log(res.data);
 					this.setState({ user_appointments: res.data});
-					//console.log(res.data);
 				  })
 				  .catch((err) => {
 					console.log(err);
