@@ -1,3 +1,5 @@
+//This creates the component for the patient profile page
+
 import React, {Component} from 'react';
 import { Redirect } from 'react-router-dom';
 import Navbar, { navbarLocation } from '../Navbar';
@@ -34,12 +36,10 @@ export default class PatientView extends Component{
     			let base64 = base64Url.replace("-", "+").replace("_", "/");
     			//atob() function decodes a string of data which has been encoded using Base64 encoding.
 				let userJ = JSON.parse(window.atob(base64));
-				console.log(userJ);
 
 				this.setState({username : userJ.username},this.findRoutes );     
 				this.setState({email : userJ.email});
 				
-				//I've tryed to put ${this.state.username}, but setState() is asynchronous, so I can't control when it actually updates the username, so the axios gets nothing as req.params because username is empty
 				axios.get(`http://localhost:5000/appointment/${userJ.username}`, {
 					headers: {
 						Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
@@ -48,7 +48,6 @@ export default class PatientView extends Component{
 				  .then(res => {
 					console.log(res.data);
 					this.setState({ user_appointments: res.data});
-					//console.log(res.data);
 				  })
 				  .catch((err) => {
 					console.log(err);

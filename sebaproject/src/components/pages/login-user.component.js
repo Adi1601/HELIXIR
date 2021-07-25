@@ -34,7 +34,6 @@ export default class LoginUser extends Component{
   extractUser(token) {
     let base64Url = token.split(".")[1];
     let base64 = base64Url.replace("-", "+").replace("_", "/");
-    //console.log(window.atob(base64));
     let userJ = JSON.parse(window.atob(base64));
     this.userJson.usernameR = userJ.username;
     this.userJson.emailR = userJ.email;
@@ -65,19 +64,12 @@ export default class LoginUser extends Component{
       headers: { Authorization: `Bearer ${token}` }
     };
 
-    console.log(loginData);
-    console.log("token: " + token);
-
     axios.post('http://localhost:5000/users/login', loginData, config)
       .then( (res) => {
-        console.log(res.data);
         if (res.data.hasOwnProperty("token")) {
           window.localStorage["jwtToken"] = res.data.token;
           this.extractUser(res.data.token);
-          console.log("email: " + this.userJson.emailR);
         }
-        console.log("pushing to homep");
-        //this.props.history.push("/homep");
         window.location.href='/homep';
       })
       .catch((error) => {alert(error.message)});

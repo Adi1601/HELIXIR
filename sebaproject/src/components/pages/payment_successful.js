@@ -1,3 +1,5 @@
+//This is the component for the payment successful page
+
 import React, {Component} from 'react';
 import Navbar from '../Navbar';
 import "./css/payment_successful.css";
@@ -8,7 +10,6 @@ import Button from 'react-bootstrap/Button';
 export default class PaymentSuccessful extends Component{
 
     render() {
-
 
         return(
             <>

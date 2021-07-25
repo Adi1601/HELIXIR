@@ -28,8 +28,6 @@ export default class Profile extends Component{
 
   componentDidMount() {
 
-    console.log("fetching details for " + this.props.location.state.data._id);
-
     const data = {
       doctor_id : this.props.location.state.data._id,
     }
@@ -38,11 +36,9 @@ export default class Profile extends Component{
         .then( (res) => {
             this.setState({comments : res.data.review});
             this.setState({avgrat : res.data.rating});
-            console.log(this.state.avgrat);
-            console.log(res.data.message);
         })
         .catch(function(err) {
-            console.log("Rec Err: " + err.response);
+            console.log(err.response);
     });
 
   }
@@ -55,7 +51,6 @@ export default class Profile extends Component{
 
     const longreviews = this.state.comments;
     const Comments = longreviews.map((review, index) => {
-      console.log(review.comment);
       return <Feedback review={review}/>
     });
 

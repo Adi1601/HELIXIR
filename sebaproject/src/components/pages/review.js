@@ -45,9 +45,6 @@ export default class Review extends Component{
   onSubmit(event) {
     event.preventDefault();
 
-    console.log("The feedback was submitted with the following data:");
-    console.log(this.state);
-
 
     const review = {
       rating: this.state.rating,
@@ -59,12 +56,12 @@ export default class Review extends Component{
       .then(res => console.log(res.data))
       .catch(err => console.log(err));
 
-    
-
     this.setState({
       rating: '',
       comment: '',
     })
+
+    window.location.href='/homep';
 
   }
 
