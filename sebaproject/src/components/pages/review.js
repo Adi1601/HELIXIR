@@ -56,13 +56,12 @@ export default class Review extends Component{
       .then(res => console.log(res.data))
       .catch(err => console.log(err));
 
-    
-
     this.setState({
       rating: '',
       comment: '',
-      id_doc:0,
     })
+
+    window.location.href='/homep';
 
   }
 
