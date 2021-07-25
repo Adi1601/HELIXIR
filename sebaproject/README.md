@@ -19,3 +19,7 @@ The tools needed to run the application can be acquired via npm, the node packag
 
 **Running the application**
 The front end and the back end can be started simultaneously through `npm start` as we have defined it to run multiple commands (node server.js for backend and react-scripts start for frontend) using “concurrently” as a dependency.
+
+
+
+Now, the app can be browsed at:  http://localhost:3000
