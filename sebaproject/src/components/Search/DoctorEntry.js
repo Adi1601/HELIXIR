@@ -40,6 +40,7 @@ export default withRouter(class DoctorEntry extends Component {
         window.location.href='/appointment';
         window.localStorage["doctor"] = this.props.name;
         window.localStorage["doctor_id"] = this.props._id;
+        window.localStorage["doctor_speciality"] = this.props.speciality;
         console.log(this.props._id);
     }
 
