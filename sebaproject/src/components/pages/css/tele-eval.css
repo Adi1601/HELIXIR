@@ -5,14 +5,16 @@
     margin-right: 25%;
     padding: 25px 25px 25px 25px;
     box-sizing: border-box;*/
-    margin-right: 10%;
-    margin-left: 10%;
+    margin-right: auto;
+    margin-left: auto;
     margin-top: 50px;
-    padding: 10px;
+    padding: 50px;
     padding-top: 25px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     background-color: #f2f2f2;
     border-radius: 10px;
+    width:40%;
+    height: max-content;
     box-shadow: 0px 0px 3px #ccc;
     border: 0px solid black;
   }
@@ -25,6 +27,7 @@
   padding: 10px 30px;
   display: flex;
   align-items: center;
+  text-align: center;
 
 }
 
@@ -37,10 +40,11 @@
 }
 
 .evalFieldLabelDescription {
-    font-size: 0.9rem;
-    text-transform: capitalize;
-    color: #797979;
+    font-size: 20px;
     float: left;
+    font-weight: bold;
+    margin: 10px;
+    margin-left: 0;
 }
   
 .evalFieldInput {

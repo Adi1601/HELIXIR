@@ -73,6 +73,7 @@ export const ButtonWrapper =  styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 
 `;
 
