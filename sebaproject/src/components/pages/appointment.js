@@ -26,7 +26,9 @@ import "./appointment.css";
 		const [doctor_id, setDoctorId] = useState("");
 		const [doctor_speciality, setDoctorSpeciality] = useState("");
 
+        //useEffect is used because everything mentioned in the body of it happens each time the component is rendered
 		useEffect(() => {
+			//if the user is logged in (so if the login token named jwtToken is not null), the rest of the code can take place
 			if (localStorage.getItem("jwtToken") !== null) {
 				setIsLogged(true);
 			
