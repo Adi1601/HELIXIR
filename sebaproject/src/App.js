@@ -4,7 +4,6 @@ import LoginUser from './components/pages/login-user.component';
 import React from 'react';
 import "@fontsource/roboto/" ;
 
-/*import "bootstrap/dist/css/bootstrap.min.css"*/
 import Tele from './Tele';
 import Review from './components/pages/review';
 import Signup from './components/pages/signup';

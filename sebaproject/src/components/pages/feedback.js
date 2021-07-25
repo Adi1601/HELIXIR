@@ -1,13 +1,11 @@
 import React, {Component} from 'react';
 
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle} from 'reactstrap';
 import Rating from '@material-ui/lab/Rating';
 
 import { FaQuoteLeft,FaQuoteRight} from 'react-icons/fa'
 import "./css/review.css"
 import "./css/profile.css"
 import "./css/feedback.css"
-//import { Button } from 'react-scroll';
 
 
 export default class Feedback extends Component{

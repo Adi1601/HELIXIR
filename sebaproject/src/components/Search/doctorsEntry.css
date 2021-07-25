@@ -52,7 +52,7 @@
 }
 
 
-#doctorCardTitle > a{
+#doctorCardTitle > p{
     font-size: small;
     font-weight: 200;
     color: grey;

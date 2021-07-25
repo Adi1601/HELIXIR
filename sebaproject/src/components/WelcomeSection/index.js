@@ -3,7 +3,6 @@ import Video from '../../videos/video.mp4';
 import {Button} from '../ButtonElements';
 import {Container, Bg, VideoBg, WelcomeContent, WelcomeH1, WelcomeP, ButtonWrapper, ArrowForward, ArrowRight} from './WelcomeElements';
 
-let token = window.localStorage["jwtToken"];
 
 const WelcomeSection = () => {
     const[hover, setHover] = useState(false)

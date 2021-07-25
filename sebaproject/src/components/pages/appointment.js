@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import Navbar, { navbarLocation } from '../Navbar';
+import Navbar from '../Navbar';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from 'axios';
@@ -149,18 +149,3 @@ import "./css/appointment.css";
  
 export default Appointment;
 
-
-/*
-
-
-<div class="container h-100"> 
-							<a id="text"> You have to be logged in to make an appointment  </a><br/><br/>
-							<Button  variant="primary" type="submit" onClick={(e) =>  window.location.href='/login'} > Login </Button>  <br/>
-							<a id="text"> Don't have an account? </a><br/><br/>
-							  		
-							<Button  variant="primary" type="submit" onClick={(e) =>  window.location.href='/signup'} > SignUp </Button>   
-					
-					 	</div>
-					 	
-					 	
-*/

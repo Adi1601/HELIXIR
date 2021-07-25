@@ -81,7 +81,6 @@ export default class Review extends Component{
                 <form onSubmit={this.onSubmit}>
                     
                     <div className="evalFields">
-                      {/* <div className="doctorPhoto"/> */}
                       <div className="rating">
                         <Rating
                           name="simple-controlled"

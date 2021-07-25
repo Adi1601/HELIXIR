@@ -1,6 +1,5 @@
 import React from 'react'
-import {Nav, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLinks} from './NavbarElements';
-import {FaBars} from 'react-icons/fa';
+import {Nav, NavbarContainer, NavLogo, NavMenu, NavItem, NavLinks} from './NavbarElements';
 import axios from 'axios';
 import { navbarLocation } from '.';
 

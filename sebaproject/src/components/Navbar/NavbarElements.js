@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 import {Link as LinkR} from 'react-router-dom';
-import {Link as LinkS} from 'react-scroll';
-import { findByLabelText } from '@testing-library/dom';
 
 export const Nav = styled.nav`
     background: #1D3D75;

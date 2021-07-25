@@ -103,13 +103,13 @@ export default class PatientView extends Component{
             <Navbar myLocation={navbarLocation.profile}/>
             <div id="profilePage" >
 				<div id="userInfo">
-					<img src={logo} id="profilePic"/>
+					<img src={logo} id="profilePic" alt="user-profile-pic"/>
 					<h2 id="username_header"> {this.state.username} </h2>
 					<hr size="3"/>
 					<p id="patient_email"> < AiOutlineMail/> {this.state.email} </p>
 				</div>
 				<div>
-		       		<a id="yourapp">Scheduled Appointments:</a><br/><br/>
+		       		<p id="yourapp">Scheduled Appointments:</p><br/><br/>
 		           
 		           <div id="user_appointments">	{ this.renderItems()} </div>
 			</div> 

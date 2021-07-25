@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { Card, CardImg, CardText, CardBody, CardTitle} from 'reactstrap';
+import { Card, CardText, CardBody, CardTitle} from 'reactstrap';
 import Rating from '@material-ui/lab/Rating';
 import "./doctorsEntry.css";
 import logo from '../../images/user.png'
@@ -58,7 +58,7 @@ export default withRouter(class DoctorEntry extends Component {
                         <CardTitle>
                                 <h4 id="doctorCardTitle">
                                     <b>Dr. {name}  </b> 
-                                    <a onClick={this.onClick}> [more info] </a>
+                                    <p onClick={this.onClick}> [more info] </p>
                                  </h4>
                                 <Rating name="read-only" value={avg_rating}  id="ratingSearch" readOnly />
                         </CardTitle>

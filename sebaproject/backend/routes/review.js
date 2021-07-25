@@ -3,9 +3,6 @@ let Review = require('../models/review.model');
 let Doctor = require('../models/doctor.model');
 
 
-//router.post("/login", authController.login);
-
-
 router.route('/').get((req, res) => {
   Review.find()
     .then(review => res.json(reviews))
@@ -39,12 +36,7 @@ router.route('/add').post(async (req, res) => {
 router.route('/loadprofile').post(async (req,res) => {
   var id_doctor = req.body.doctor_id;
   var avg_rating = 0;
-  var num_ratings = 0;
-  /* await - async request 
-  ** .find() looks for all the occurences int the selection
-  **    first parameter is a query object
-  **    second parameter is the projection - describes which fields to include in the result
-  */    
+  var num_ratings = 0;  
 
   let result = await Review.find({id_doc: id_doctor});
   

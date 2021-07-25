@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Navbar from '../Navbar';
 import Rating from '@material-ui/lab/Rating';
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle} from 'reactstrap';
+import { Card, CardText, CardBody, CardTitle} from 'reactstrap';
 import axios from 'axios';
 import Feedback from './feedback'
 import { IoIosArrowDropleftCircle} from 'react-icons/io'
@@ -38,10 +38,6 @@ export default class Profile extends Component{
         .then( (res) => {
             this.setState({comments : res.data.review});
             this.setState({avgrat : res.data.rating});
-            //for(let i=0; i<docs.length; i++) {
-            //    console.log("doctors rec: " + docs[i].name);
-            //}
-            //this.setState({ doctors: docs})
             console.log(this.state.avgrat);
             console.log(res.data.message);
         })

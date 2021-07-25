@@ -1,6 +1,5 @@
 import React from 'react'
-import {Nav, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLinks, NavBtn, NavBtnLink} from './NavbarElements';
-import {FaBars} from 'react-icons/fa';
+import {Nav, NavbarContainer, NavLogo, NavMenu, NavItem, NavLinks, NavBtn, NavBtnLink} from './NavbarElements';
 import { navbarLocation } from '.';
 
 const Navbar1 = ({toggle, myLocation}) => {

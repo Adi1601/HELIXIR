@@ -141,15 +141,4 @@ onSubmit(e) {
     );
   
   }
-
-    /*render(){
-    return(
-        <>
-        <Navbar/>
-        <div>
-            <p> You are on the Login page</p>
-        </div>
-        </>
-    );
-    }*/
 }

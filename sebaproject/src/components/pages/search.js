@@ -67,10 +67,11 @@ export default class SearchDoctor extends Component{
             rating : 'avg_rating',
         };
         var sortProperty = types[type];
+        var sorted;
         if (sortProperty === 'avg_rating') {
-            var sorted = [...this.state.doctors].sort((a, b) => b[sortProperty] - a[sortProperty]);
+            sorted = [...this.state.doctors].sort((a, b) => b[sortProperty] - a[sortProperty]);
         } else {
-            var sorted = [...this.state.doctors].sort((a, b) => a[sortProperty].localeCompare(b[sortProperty]));
+            sorted = [...this.state.doctors].sort((a, b) => a[sortProperty].localeCompare(b[sortProperty]));
         }
         this.setState({doctors : sorted});
         sorted = [];
@@ -128,13 +129,11 @@ export default class SearchDoctor extends Component{
 
     render() {
         const doctors = this.state.doctors;
-        const len = doctors.length;
 
         console.log("Printing doctors list");
         console.log(doctors);
         const DoctorEntries = doctors.map((doctor, index) => {
             if (doctors.length) console.log('got something');
-            console.log(doctor._id);
             return <DoctorEntry key={doctor._id}{...doctor}/>
         });
 
@@ -180,9 +179,7 @@ export default class SearchDoctor extends Component{
                     </form>
                 </div>
                 <div className="searchResults">
-                    {/* <div className="resultAnnounce">
-                    Results: {this.state.searchName}
-                    </div> */}
+                   
                     <div id = "sortFilter">
                         <FiFilter/>
                         <select onChange={this.setSortType} id="sortFilterBox">
