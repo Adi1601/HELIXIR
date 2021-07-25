@@ -109,7 +109,7 @@ export default class PatientView extends Component{
 					<p id="patient_email"> < AiOutlineMail/> {this.state.email} </p>
 				</div>
 				<div>
-		       		<p id="yourapp">Scheduled Appointments:</p><br/><br/>
+		       		<p id="yourapp">Scheduled Appointments:</p>
 		           
 		           <div id="user_appointments">	{ this.renderItems()} </div>
 			</div> 

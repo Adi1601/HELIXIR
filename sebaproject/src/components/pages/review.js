@@ -64,7 +64,6 @@ export default class Review extends Component{
     this.setState({
       rating: '',
       comment: '',
-      id_doc:0,
     })
 
   }

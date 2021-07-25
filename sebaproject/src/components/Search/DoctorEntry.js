@@ -58,7 +58,7 @@ export default withRouter(class DoctorEntry extends Component {
                         <CardTitle>
                                 <h4 id="doctorCardTitle">
                                     <b>Dr. {name}  </b> 
-                                    <p onClick={this.onClick}> [more info] </p>
+                                    <a onClick={this.onClick}> [more info] </a>
                                  </h4>
                                 <Rating name="read-only" value={avg_rating}  id="ratingSearch" readOnly />
                         </CardTitle>
