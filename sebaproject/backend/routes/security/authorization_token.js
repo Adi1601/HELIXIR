@@ -1,8 +1,10 @@
+//Checks to see if there is a login token (if a user is logged in) then it extracts it and exports it
+
 const jwt = require('jsonwebtoken');
 const JwtSecret = "Very Secret";
 
+//checks to see if the login token defined in the auth.js route exists
 const verifyData = async (token) => {
-	
     try {
        await jwt.verify(token, JwtSecret,  {expiresIn: 86400});
     } catch (err) {
@@ -12,6 +14,7 @@ const verifyData = async (token) => {
 };
 
 const authorizeToken = async (req, res, next) => {
+    //checks to see if the authorization header exists, otherwise throws an error
     try {
         if (!req.headers.authorization) {
            throw new Error('The authorization header is missing!');
@@ -29,6 +32,7 @@ const authorizeToken = async (req, res, next) => {
     }
 };
 
+//exports the token
 module.exports = {
     authorizeToken
 };
