@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle} from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle} from 'reactstrap';
 import Rating from '@material-ui/lab/Rating';
-import Profile from '../pages/profile';
-import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
-import {Button} from '../ButtonElements';
 import "./doctorsEntry.css";
-import { requirePropFactory } from '@material-ui/core';
 import logo from '../../images/user.png'
 
 
@@ -56,7 +52,7 @@ export default withRouter(class DoctorEntry extends Component {
             <>
             <div className="col-2">
                 <Card id="doctorCard">
-                    <img id="doctorImage"src={logo}/>
+                    <img id="doctorImage"src={logo} alt="userImage"/>
                     <div className="cardInfo">
 
                         <CardTitle>

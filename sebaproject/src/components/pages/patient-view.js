@@ -7,7 +7,7 @@ import Card from 'react-bootstrap/Card';
 import logo from '../../images/user.png'
 import { AiOutlineMail } from 'react-icons/ai'
 
-import "./patientview.css";
+import "./css/patientview.css";
 
 let token = window.localStorage["jwtToken"];
 
@@ -45,6 +45,7 @@ export default class PatientView extends Component{
 					},
 				})
 				  .then(res => {
+					console.log(res.data);
 					this.setState({ user_appointments: res.data});
 					//console.log(res.data);
 				  })

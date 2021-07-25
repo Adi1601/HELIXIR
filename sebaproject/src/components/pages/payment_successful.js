@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import Navbar from '../Navbar';
-import "./payment_successful.css";
-import success_icon from './success_icon.png';
+import "./css/payment_successful.css";
+import success_icon from '../../images/success_icon.png';
 import Button from 'react-bootstrap/Button';
-import PatientView from './patient-view';
-import { Redirect } from 'react-router-dom';
 
 
 export default class PaymentSuccessful extends Component{

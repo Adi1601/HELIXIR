@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
-import "./tele-eval.css";
 import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
 import {Button} from '../ButtonElements';
+
+import "./css/tele-eval.css";
+
 
 export default class TeleEvalForm extends Component{
     constructor() {

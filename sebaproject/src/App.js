@@ -1,4 +1,3 @@
-import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from './components/pages/index';
 import LoginUser from './components/pages/login-user.component';
@@ -18,6 +17,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';//CSS framework for front-end form
 
 import Appointment from './components/pages/appointment';//import the appointment component
 import payments from './components/pages/payments';
+
+import './App.css';
 
 function App() {
   return (
@@ -59,9 +60,6 @@ function App() {
       </Switch>
       <Switch>
         <Route path = "/payment" exact component={payments}/>
-      </Switch>
-      <Switch>    
-        <Route path="/success" exact component = {Success}/>
       </Switch>
     </Router>
     );

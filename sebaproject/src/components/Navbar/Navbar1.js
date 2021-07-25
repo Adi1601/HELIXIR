@@ -9,7 +9,6 @@ const Navbar1 = ({toggle, myLocation}) => {
         <>
         <Nav>
             <NavbarContainer>
-                <img src='../../images/helixir.png'/>
                 <NavLogo to="/">HELIXIR</NavLogo>
                 <MobileIcon onClick={toggle}>
                     <FaBars/>

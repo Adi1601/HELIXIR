@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Navbar from '../Navbar';
 import Rating from '@material-ui/lab/Rating';
-import { useHistory } from "react-router-dom";
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle} from 'reactstrap';
 import axios from 'axios';
 import Feedback from './feedback'
@@ -9,8 +8,8 @@ import { IoIosArrowDropleftCircle} from 'react-icons/io'
 import { AiFillMedicineBox} from 'react-icons/ai'
 import { FaHospital,FaCity} from 'react-icons/fa'
 
-import "./review.css"
-import "./profile.css"
+import "./css/review.css"
+import "./css/profile.css"
 
 
 export default class Profile extends Component{
@@ -56,7 +55,7 @@ export default class Profile extends Component{
   render() {
 
 
-    const {name, city, rating, speciality, hospital, id} = this.props.location.state.data;
+    const {name, city, speciality, hospital} = this.props.location.state.data;
 
     const longreviews = this.state.comments;
     const Comments = longreviews.map((review, index) => {

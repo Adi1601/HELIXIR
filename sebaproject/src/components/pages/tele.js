@@ -7,8 +7,10 @@ import React, { useEffect, useRef, useState } from "react"
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Peer from "simple-peer";
 import io from "socket.io-client";
-import "./tele.css";
 import Navbar from '../Navbar';
+
+import "./css/tele.css";
+
 
 const socket = io.connect('http://localhost:5000')
 function Tele() {

@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import Navbar, { navbarLocation } from '../Navbar';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -6,7 +6,7 @@ import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import LoginUser from './login-user.component';
 
-import "./appointment.css";
+import "./css/appointment.css";
 
 
  //Appointment component defined here and rendered when accesing the following from the browser: http://localhost:5001/appointment
@@ -71,7 +71,7 @@ import "./appointment.css";
 		   			start_time: time,
 		   			motive: motive
 	   			}
-  			
+			  
                 //use axios to request the backend to create the new appointment
 	   			axios.post('http://localhost:5000/appointment/appointmentCreate', body, {
 	   					 headers: {

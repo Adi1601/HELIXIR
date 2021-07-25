@@ -1,11 +1,8 @@
 import React, {Component} from 'react';
 import Navbar, { navbarLocation } from '../Navbar';
-import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
-import {Button} from '../ButtonElements';
 import DoctorEntry from '../Search/DoctorEntry';
 import axios from 'axios';
-import {Container} from '@material-ui/core';
-import './search.css';
+import './css/search.css';
 
 export default class SearchDoctor extends Component{
     constructor(props) {
@@ -186,7 +183,7 @@ export default class SearchDoctor extends Component{
                     Results: {this.state.searchName}
                     </div> */}
                     <select onChange={this.setSortType}>
-                        <option value="alphabet">Doctor Name A-Z</option>
+                        <option value="alphabet">Doctor's Name A-Z</option>
                         <option value="rating">Rating High-Low</option>
                     </select>
                     <div className="doctorCards">

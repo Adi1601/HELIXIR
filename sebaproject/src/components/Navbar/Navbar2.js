@@ -1,5 +1,5 @@
 import React from 'react'
-import {Nav, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLinks, NavBtn, NavBtnLink} from './NavbarElements';
+import {Nav, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLinks} from './NavbarElements';
 import {FaBars} from 'react-icons/fa';
 import axios from 'axios';
 import { navbarLocation } from '.';
@@ -25,7 +25,6 @@ const Navbar2 = ({toggle, myLocation}) => {
         <>
         <Nav>
             <NavbarContainer>
-                <img src='../../images/helixir.png' height="33" width="33"/>
                 <NavLogo to="/"> HELIXIR</NavLogo>
                 <MobileIcon onClick={toggle}>
                     <FaBars/>

@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import Navbar from '../Navbar';
-import { Link } from "react-router-dom";
 import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
 import {Button} from '../ButtonElements';
-import "./login-user.css";
-import "./signup.css";
 import axios from 'axios';
+
+import "./css/login-user.css";
+import "./css/signup.css";
 
 export default class SignUpUser extends Component{
   constructor(props) {

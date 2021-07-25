@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom"
 import Navbar from "../Navbar";
-import "./payments.css";
+import "./css/payments.css";
 
 const PayPalButton = window.paypal.Buttons.driver("react", { React, ReactDOM });
 

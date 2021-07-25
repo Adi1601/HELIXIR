@@ -1,7 +1,6 @@
 #patient_view_card{
 	margin:20px;
 	padding-left: 15%;
-	padding-right: 15%;
 }
 
 #username_header {
@@ -10,7 +9,7 @@
 }
 
 #patient_email {
-	font-size: 20px;
+	font-size: 15px;
 	font-weight: 450;
 }
 
@@ -25,9 +24,8 @@
 
 #profilePage{
 	display: grid;
-	width: 100%;
 	height: 100%;
-	margin: 20px;
+	margin: 10%;
 	margin-top: 50px;
 	grid-template-columns: 20% 80%;
 }

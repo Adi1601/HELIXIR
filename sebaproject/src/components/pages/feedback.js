@@ -4,9 +4,9 @@ import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle} from 'react
 import Rating from '@material-ui/lab/Rating';
 
 import { FaQuoteLeft,FaQuoteRight} from 'react-icons/fa'
-import "./review.css"
-import "./profile.css"
-import "./feedback.css"
+import "./css/review.css"
+import "./css/profile.css"
+import "./css/feedback.css"
 //import { Button } from 'react-scroll';
 
 

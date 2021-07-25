@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import Navbar from '../Navbar';
-import { Link } from "react-router-dom";
-import { useHistory } from "react-router-dom";
 import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
 import {Button} from '../ButtonElements';
-import "./login-user.css";
+import "./css/login-user.css";
 import axios from 'axios';
 
 let token = window.localStorage["jwtToken"];

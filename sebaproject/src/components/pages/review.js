@@ -1,18 +1,13 @@
 import React, {Component} from 'react';
 import Navbar from '../Navbar';
-/*import {ButtonWrapper} from '../WelcomeSection/WelcomeElements';
-import {Button} from '../ButtonElements';*/
 import Rating from '@material-ui/lab/Rating';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 
-import "./appointment.css";
+import "./css/appointment.css";
+import "./css/tele-eval.css";
+import "./css/review.css"
 
-
-import "./tele-eval.css";
-import "./review.css"
 
 export default class Review extends Component{
   
