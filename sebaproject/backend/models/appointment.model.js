@@ -1,3 +1,5 @@
+//This file is used for use case 2: booking appointments and it represents the appointment model
+
 const mongoose = require('mongoose'); 
 
 const Schema = mongoose.Schema;
