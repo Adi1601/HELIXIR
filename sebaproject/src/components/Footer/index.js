@@ -17,20 +17,20 @@ const Footer = () => {
                                     Terms of Services
                                 </FooterLink>
                                 <FooterLink>
-                                    Blah Blah Blah
+                                    Data Privacy
                                 </FooterLink>
                         </FooterLinkItems>
 
                         <FooterLinkItems>
-                            <FooterLinkTitle> Something </FooterLinkTitle>
+                            <FooterLinkTitle> Explore </FooterLinkTitle>
                                 <FooterLink>
-                                    Something
+                                    FAQs
                                 </FooterLink>
                                 <FooterLink>
-                                    Something more
+                                    Teleconsultation Guide
                                 </FooterLink>
                                 <FooterLink>
-                                    Something more...
+                                    Appointment Guide 
                                 </FooterLink>
                         </FooterLinkItems>
 
@@ -38,28 +38,28 @@ const Footer = () => {
 
                     <FooterLinksWrapper>
                         <FooterLinkItems>
-                            <FooterLinkTitle> Jhinga La la HOO </FooterLinkTitle>
+                            <FooterLinkTitle> Payment and Pricing </FooterLinkTitle>
                                 <FooterLink>
-                                    HoO
+                                    Teleconsultation Pricing
                                 </FooterLink>
                                 <FooterLink>
-                                    Hoo
+                                    Payment Methods
                                 </FooterLink>
                                 <FooterLink>
-                                    Blah Blah Blah
+                                    Refund Policies
                                 </FooterLink>
                         </FooterLinkItems>
 
                         <FooterLinkItems>
-                            <FooterLinkTitle> Ja, Bitte </FooterLinkTitle>
+                            <FooterLinkTitle> Outreach </FooterLinkTitle>
                                 <FooterLink>
-                                    Something
+                                    Feedback
                                 </FooterLink>
                                 <FooterLink>
-                                    Something more
+                                    Contact Us
                                 </FooterLink>
                                 <FooterLink>
-                                    Something more...
+                                    Join Us
                                 </FooterLink>
                         </FooterLinkItems>
 
