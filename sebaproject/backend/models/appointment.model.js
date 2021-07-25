@@ -7,6 +7,7 @@ const appointmentSchema = new Schema({
     //id: ObjectId - an ID is automatically mande by MongoDB
 	name: String,
 	email: String,
+	doctor_name: String,
 	doctor_speciality: String,
 	doctor_id: mongoose.ObjectId,
 	date: { "type": Date, "default": Date.now() },//gets the current date
