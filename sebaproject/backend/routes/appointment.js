@@ -3,6 +3,7 @@ const router = require('express').Router();
 let Appointment =  require('../models/appointment.model');
 const jwt = require('jsonwebtoken');
 
+//Checking if the user is logged in, if there is a login token (with respect to authorization_token.js)
 const {
     authorizeToken
 } = require('./security/authorization_token.js');
