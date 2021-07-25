@@ -7,26 +7,26 @@ import Icon3 from '../../images/svg-3.svg';
 const Services = () => {
     return (
         <ServicesContainer id="services">
-            <ServicesH1>Our Services</ServicesH1>
+            <ServicesH1>Our Services in Development</ServicesH1>
 
             <ServicesWrapper>
 
                 <ServicesCard>
                     <ServicesIcon src={Icon1}/>
-                    <ServicesH2>Something Something</ServicesH2>
-                    <ServicesP>We do blah blah</ServicesP>
+                    <ServicesH2>Bridging Healthcare</ServicesH2>
+                    <ServicesP>We're striving to remove barriers from access to healthcare with new and innovative ways to assist you.</ServicesP>
                 </ServicesCard>
 
                 <ServicesCard>
                     <ServicesIcon src={Icon2}/>
-                    <ServicesH2>Something Something 2</ServicesH2>
-                    <ServicesP>We do blah blah</ServicesP>
+                    <ServicesH2>Medical Essentials</ServicesH2>
+                    <ServicesP>We are partnering up with trusted retailers to ease purchases of over-the-counter items, such as face masks, sanitizers, etc.</ServicesP>
                 </ServicesCard>
 
                 <ServicesCard>
                     <ServicesIcon src={Icon3}/>
-                    <ServicesH2>Something Something 3</ServicesH2>
-                    <ServicesP>We do blah blah</ServicesP>
+                    <ServicesH2>Digitalized Prescriptions</ServicesH2>
+                    <ServicesP>We're working to provide e-prescriptions accessible to pharmacies and your healthcare insurer, simply, after your teleconsultation. </ServicesP>
                 </ServicesCard>
 
             </ServicesWrapper>

@@ -16,7 +16,9 @@ router.route('/').get(authorizeToken, (req,res)=> {
 
 //get localhost:5000/appointment/:username
 router.route('/:username').get(authorizeToken, (req,res)=> {
-	Appointment.find({name: req.params.username})
+	Appointment.find({name: req.params.username,
+					  date: {$gt : Date.now()}})
+		.sort([['date', 1], ['start_time', 1]])
     	.then(user_appointments => res.json(user_appointments))
 		.catch(err => res.status(400).json('Error: ' + err)); 
 
