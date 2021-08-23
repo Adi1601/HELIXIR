@@ -20,13 +20,13 @@ const Services = () => {
                 <ServicesCard>
                     <ServicesIcon src={Icon2}/>
                     <ServicesH2>Medical Essentials</ServicesH2>
-                    <ServicesP>We are partnering up with trusted retailers to ease purchases of over-the-counter items, such as face masks, sanitizers, etc.</ServicesP>
+                    <ServicesP>We are partnering up with trusted retailers to ease purchases of items, such as face masks, sanitizers, etc.</ServicesP>
                 </ServicesCard>
 
                 <ServicesCard>
                     <ServicesIcon src={Icon3}/>
                     <ServicesH2>Digitalized Prescriptions</ServicesH2>
-                    <ServicesP>We're working to provide e-prescriptions accessible to pharmacies and your healthcare insurer, simply, after your teleconsultation. </ServicesP>
+                    <ServicesP>We're working to provide e-prescriptions accessible to pharmacies, simply, after your teleconsultation. </ServicesP>
                 </ServicesCard>
 
             </ServicesWrapper>
